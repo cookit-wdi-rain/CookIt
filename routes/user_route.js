@@ -5,9 +5,9 @@ const db       = require('../models/users')
 const sendJSONresp = (req,res)=>res.json(res.rows)
 
 
-users.route('/:user_ID')
+users.route('/:users_id')
   .delete(db.deleteUser, ( req,res ) => res.send( req.params.users_id ))
-
+  .put(db.updateUser, sendJSONresp)
 
 
 
