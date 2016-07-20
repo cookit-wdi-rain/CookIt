@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "clean": "rm -rf dist",
-    "watch" : "webpack --watch",
+    "watch": "webpack --watch",
     "prebuild": "npm run clean -s; npm install",
     "build": "webpack --progress --colors",
     "start": "node server.js"
