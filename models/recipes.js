@@ -26,8 +26,15 @@ module.exports = {
     console.log('=====', req.body)
     _db.any(
       `INSERT INTO
-      `//this needs table names
-      `returning *;`, req.body
+      favorite_recipes (recipe_id,
+                        recipe_name,
+                        recipe_url,
+                        img_link)
+      VALUES ($/recipe_id/,
+              $/recipe_name/,
+              $/recipe_url/,
+              $/img_link/)
+      returning *;`, req.body
     )
     .then(recipe => {
       console.log('Added recipe successfully');
@@ -39,7 +46,7 @@ module.exports = {
     })
   },
   deleteRecipe(req,res,next) {
-    const rID = Number.parseInt(req.params.recipeID)
+    const rID = Number.parseInt(req.params.recipe_id)
     _db.none(
       `DELETE FROM favorite_recipes
       WHERE favorites_id = $1;`, [rID]
