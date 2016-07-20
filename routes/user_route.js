@@ -1,13 +1,18 @@
 const express   = require('express');
-const router    = express.Router()
+const users    = express.Router()
 const db        = require('../models/users')
 
+const sendJSONresp = (req,res)=>res.json(res.rows)
 
-router.get('/', function(req,res){
-  res.send('USER PAGE')
-})
+// users.route('/:user_ID')
+  //.put(db.updatePantryItem, sendJSONresp)
+  // .delete(db.deleteusers, ( req,res ) => res.send( req.params.users_ID ))
+
+users.route('/')
+  .get(db.getUsers, sendJSONresp)
+  .post(db.addUser, sendJSONresp)
 
 
 
-module.exports = router;
+module.exports = users;
 

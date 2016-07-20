@@ -1,15 +1,21 @@
 const express   = require('express');
-const router    = express.Router()
+const pantry    = express.Router()
 const db        = require('../models/pantry_items')
 
 
-router.get('/', function (req,res){
-  res.send('PANTY PAGE')
-})
+const sendJSONresp = (req,res)=>res.json(res.rows)
+
+// pantry.route('/:taskID')
+//   .put(db.updatePantryItem, sendJSONresp)
+//   .delete(db.deletePantryItem, ( req,res ) => res.send( req.params.items_ID ))
+
+pantry.route('/')
+  .get(db.getPantryItems, sendJSONresp)
+  .post(db.addPantryItem, sendJSONresp)
 
 
 
 
 
 
-module.exports = router;
+module.exports = pantry;

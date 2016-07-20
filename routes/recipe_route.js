@@ -1,17 +1,17 @@
 
 const express   = require('express');
-const router    = express.Router()
+const recipe    = express.Router()
 const db        = require('../models/recipes')
 
-router.get('/', function (req,res){
-  res.send('RECIPE PAGE')
-})
+const sendJSONresp = (req,res)=>res.json(res.rows)
+
+// recipe.route('/:recipeID')
+//   .delete(db.deleteRecipe, ( req,res ) => res.send( req.params.recipe_ID ))
+
+recipe.route('/')
+  .get(db.getRecipes, sendJSONresp)
+  .post(db.addRecipe, sendJSONresp)
 
 
-
-
-
-
-
-module.exports = router;
+module.exports = recipe;
 
