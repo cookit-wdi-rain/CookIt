@@ -40,13 +40,12 @@ module.exports = {
     })
   },
 
-  updatePantryItems(req,res,next) {
-    req.body.pID = Number.parseInt(req.params.pantry_itemsID)
-    req.body.completed = !!req.body.completed;
+  updatePantryItem(req,res,next) {
+    req.body.iID = Number.parseInt(req.params.pantry_items_id)
     _db.one(
-      `UPDATE pantry_itemss
-      SET ingredient_name = $/ingredient_name/,
-      WHERE items_id = $/pID/
+      `UPDATE pantry_items
+      SET ingredient_name = $/ingredient_name/
+      WHERE items_id = $1
       returning * ;`, req.body
     )
     .then(pantry_items => {
@@ -59,11 +58,11 @@ module.exports = {
     })
   },
 
-  deletePantryItems(req,res,next) {
-    const pID = Number.parseInt(req.params.pantry_itemsID)
+  deletePantryItem(req,res,next) {
+    const iID = Number.parseInt(req.params.pantry_items_id)
     _db.none(
-      `DELETE FROM pantry_itemss
-      WHERE items_id = $1;`, [tID]
+      `DELETE FROM pantry_items
+      WHERE items_id = $1;`, [iID]
     )
     .then(() => {
       console.log('Deleted pantry_items successfully');

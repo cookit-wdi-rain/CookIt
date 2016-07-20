@@ -60,7 +60,7 @@ module.exports = {
   },
 
   deleteUser(req,res,next) {
-    const uID = Number.parseInt(req.params.userID)
+    const uID = Number.parseInt(req.params.user_id)
     _db.none(
       `DELETE FROM users
       WHERE user_id = $1;`, [uID]
