@@ -8,9 +8,14 @@ password TEXT NOT NULL,
 created_at TIMESTAMP NOT NULL DEFAULT now()
 );
 
+<<<<<<< HEAD
+CREATE INDEX ON users (user_id);
+=======
 
 DROP TABLE IF EXISTS favorite_recipes;
+>>>>>>> e1b3740cceca0ed963e395af2a1eca393f1f1446
 
+DROP TABLE IF EXISTS favorite_recipes;
 CREATE TABLE favorite_recipes (
 favorites_id SERIAL PRIMARY KEY NOT NULL,
 user_reference INTEGER REFERENCES users(user_id),
@@ -21,9 +26,7 @@ img_link TEXT NOT NULL
 );
 
 
-
 DROP TABLE IF EXISTS pantry_items;
-
 CREATE TABLE pantry_items (
 items_id SERIAL PRIMARY KEY NOT NULL,
 user_reference INTEGER REFERENCES users(user_id),

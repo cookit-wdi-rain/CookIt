@@ -26,9 +26,9 @@ module.exports = {
     console.log('=====', req.body)
     _db.any(
       `INSERT INTO
-      users (first_name)
-      VALUES ($/name/)
-      returning *;`, req.body
+      users (first_name, email, password, created_at)
+      VALUES ($1, $2, $3, CURRENT_TIMESTAMP)
+      returning *;`, [req.body.first_name, req.body.email, req.body.password]
     )
     .then(user => {
       console.log('Added user successfully');
@@ -60,7 +60,7 @@ module.exports = {
   },
 
   deleteUser(req,res,next) {
-    const uID = Number.parseInt(req.params.user_id)
+    const uID = Number.parseInt(req.params.users_id)
     _db.none(
       `DELETE FROM users
       WHERE user_id = $1;`, [uID]
