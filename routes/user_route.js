@@ -12,7 +12,7 @@ const sendJSONresp = (req,res)=>res.json(res.rows)
 
 users.route('/')
   .get(db.getUsers, sendJSONresp)
-  //.post(db.addUser, sendJSONresp)
+  .post(db.addUser, sendJSONresp)
 
 
 
