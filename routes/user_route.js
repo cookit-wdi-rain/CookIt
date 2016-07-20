@@ -1,6 +1,6 @@
-const express   = require('express');
+const express  = require('express');
 const users    = express.Router()
-const db        = require('../models/users')
+const db       = require('../models/users')
 
 const sendJSONresp = (req,res)=>res.json(res.rows)
 
@@ -10,7 +10,7 @@ const sendJSONresp = (req,res)=>res.json(res.rows)
 
 users.route('/')
   .get(db.getUsers, sendJSONresp)
-  .post(db.addUser, sendJSONresp)
+  //.post(db.addUser, sendJSONresp)
 
 
 
