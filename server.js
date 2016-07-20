@@ -17,16 +17,15 @@ const port        = process.argv[2] || process.env.PORT || 3000
 // app.use(morgan( DEV ? 'dev' : 'common'))
 app.use(morgan('dev'))
 
+app.use(express.static(path.join(__dirname,'dist')))
+
 app.use(bodyParser.json());
 
-// app.use('/users', userRoute)
-// app.use(express.static(path.join(__dirname,'dist')))
+app.use('/users', userRoute)
 
-// app.use('/recipes', recipeRoute)
-// app.use(express.static(path.join(__dirname,'dist')))
+app.use('/recipes', recipeRoute)
 
-// app.use('/pantry', pantryRoute)
-// app.use(express.static(path.join(__dirname,'dist')))
+app.use('/pantry', pantryRoute)
 
 app.listen(port, ()=>{
   console.log('Server maxin\' and relaxin\' at ', port)
