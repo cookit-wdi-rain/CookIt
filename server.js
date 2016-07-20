@@ -9,9 +9,9 @@ const morgan      = require('morgan')
 const path        = require('path')
 const bodyParser  = require('body-parser')
 const app         = express()
-const userRoute   = require('./routes/user-route')
-const pantryRoute = require('./routes/pantry-route')
-const recipeRoute = require('./routes/recipe-route')
+const userRoute   = require('./routes/user_route')
+const pantryRoute = require('./routes/pantry_route')
+const recipeRoute = require('./routes/recipe_route')
 const port        = process.argv[2] || process.env.PORT || 3000
 
 app.use(morgan( DEV ? 'dev' : 'common'))
