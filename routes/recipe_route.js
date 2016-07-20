@@ -10,8 +10,8 @@ const sendJSONresp = (req,res)=>res.json(res.rows)
 
 
 
-recipe.route('/:recipeID')
-  .delete(db.deleteRecipe, ( req,res ) => res.send( req.params.recipe_ID ))
+recipe.route('/:recipe_id')
+  .delete(db.deleteRecipe, ( req,res ) => res.send( req.params.recipe_id ))
 
 
 recipe.route('/')
