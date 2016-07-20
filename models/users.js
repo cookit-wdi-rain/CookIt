@@ -26,9 +26,9 @@ module.exports = {
     console.log('=====', req.body)
     _db.any(
       `INSERT INTO
-      users (first_name)
-      VALUES ($/name/)
-      returning *;`, req.body
+      users (first_name, email, password, created)
+      VALUES ($1, $2, $3, CURRENT_TIMESTAMP)
+      returning *;`, [req.body.first_name, req.body.email, req.body.password]
     )
     .then(user => {
       console.log('Added user successfully');
@@ -42,12 +42,14 @@ module.exports = {
 
   /* PUT /users/:id*/
   updateUser(req,res,next) {
-    req.body.uID = Number.parseInt(req.params.userID)
+    const uID = Number.parseInt(req.params.users_id)
     _db.one(
       `UPDATE users
-      SET first_name = $/first_name/,
-      WHERE user_id = $/uID/
-      returning * ;`, req.body
+      SET first_name = $1,
+      email = $2,
+      password = $3
+      WHERE user_id = $4
+      returning * ;`, [req.body.first_name, req.body.email, req.body.password, uID]
     )
     .then(user => {
       console.log('Update user successfully');
@@ -60,7 +62,7 @@ module.exports = {
   },
 
   deleteUser(req,res,next) {
-    const uID = Number.parseInt(req.params.userID)
+    const uID = Number.parseInt(req.params.users_id)
     _db.none(
       `DELETE FROM users
       WHERE user_id = $1;`, [uID]
