@@ -41,11 +41,11 @@ module.exports = {
   },
 
   updatePantryItem(req,res,next) {
-    req.body.iID = Number.parseInt(req.params.pantry_items_id)
+    req.body.iID = Number.parseInt(req.params.item_id)
     _db.one(
       `UPDATE pantry_items
       SET ingredient_name = $/ingredient_name/
-      WHERE items_id = $1
+      WHERE items_id = $/iID/
       returning * ;`, req.body
     )
     .then(pantry_items => {
@@ -59,7 +59,7 @@ module.exports = {
   },
 
   deletePantryItem(req,res,next) {
-    const iID = Number.parseInt(req.params.pantry_items_id)
+    const iID = Number.parseInt(req.params.item_id)
     _db.none(
       `DELETE FROM pantry_items
       WHERE items_id = $1;`, [iID]

@@ -42,7 +42,7 @@ module.exports = {
 
   /* PUT /users/:id*/
   updateUser(req,res,next) {
-    req.body.uID = Number.parseInt(req.params.userID)
+    req.body.uID = Number.parseInt(req.params.user_id)
     _db.one(
       `UPDATE users
       SET first_name = $/first_name/,
