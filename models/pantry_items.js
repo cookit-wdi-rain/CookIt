@@ -40,7 +40,7 @@ module.exports = {
     })
   },
 
-  updatePantry_items(req,res,next) {
+  updatePantryItems(req,res,next) {
     req.body.pID = Number.parseInt(req.params.pantry_itemsID)
     req.body.completed = !!req.body.completed;
     _db.one(

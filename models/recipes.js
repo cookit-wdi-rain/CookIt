@@ -37,7 +37,7 @@ module.exports = {
     .catch(error =>{
       console.error('Error in ADDING recipe', error)
     })
-  },d
+  },
   deleteRecipe(req,res,next) {
     const rID = Number.parseInt(req.params.recipeID)
     _db.none(
