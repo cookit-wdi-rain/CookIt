@@ -2,10 +2,10 @@ const express   = require('express');
 const router    = express.Router()
 
 
-
 router.get('/', function (req,res){
-  res.send('PANTY PAGE')
+  res.send('RECIPE PAGE')
 })
+
 
 
 
