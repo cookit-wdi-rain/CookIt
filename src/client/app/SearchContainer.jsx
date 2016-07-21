@@ -1,19 +1,18 @@
-import React from 'react'
-import Search from './Search.jsx'
-// import Results from './Results.jsx'
-// import ajax from '../helpers/ajaxAdapter.jsx'
+
+import React   from 'react'
+import Search  from './Search.jsx'
+//import Results from './Results.jsx'
+//import ajax    from '../helpers/ajaxAdapter.jsx'
 
 
 export default class SearchContainer extends React.Component {
-
   constructor(){
-    super()
+    super();
     this.state = {
-      query:"",
+      query: "",
       searched: false,
-      results:[]
+      result: []
     }
-
   }
 
   handleUpdateSearch(event){
