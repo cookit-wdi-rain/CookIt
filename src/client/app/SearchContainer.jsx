@@ -23,13 +23,13 @@ export default class SearchContainer extends React.Component {
 
   handleSubmitSearch(event){
     event.preventDefault();
-    ajax.cuisineCall(this.state.query).then( cuisine =>{
-    //ajax.testCall(this.state.query).then( cuisine =>{
+    // ajax.cuisineCall(this.state.query).then( cuisine =>{
+    ajax.testCall(this.state.query).then( cuisine =>{
     //console.log(this.state.query)
     console.log("Got back cuisine ", cuisine)
       this.setState({
-        results: cuisine.results,
-        // results:cuisine,
+        //results: cuisine.results,
+        results:cuisine,
         query:"",
         searched: true
       })
