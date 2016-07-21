@@ -15,9 +15,21 @@ function CuisineCall(query) {
   return fetch(url, myInit).then(res => res.json() )
 }
 
+const testCall = {
+
+test() {
+  return fetch('/testapi')
+  .then(res=>res.json())
+},
+
+secondCall(query) {
+  return fetch('/testapi/'+query)
+  .then(res=>res.json())
+}
+}
 
 
-export default CuisineCall;
+export default testCall;
 
 
 

@@ -2,7 +2,7 @@ import React   from 'react'
 import Search  from './Search.jsx'
 import Results from './Results.jsx'
 // import ajax    from '../helpers/ajaxAdapter.jsx'
-import CuisineCall from '../helpers/ajaxAdapter.js'
+import testCall from '../helpers/ajaxAdapter.js'
 
 
 export default class SearchContainer extends React.Component {
@@ -23,14 +23,32 @@ export default class SearchContainer extends React.Component {
 
   handleSubmitSearch(event){
     event.preventDefault();
-    CuisineCall(this.state.query).then( cuisine =>{
+    console.log(this.state.query)
+    testCall.test(this.state.query).then( cuisine =>{
       console.log("Got back cuisine ", cuisine)
       this.setState({
-        results: cuisine.results,
+        results: cuisine,
         query:"",
         searched: true
       })
     })
+  }
+
+  selectRecipe(event){
+    event.preventDefault();
+    this.setState({
+      query: event.target.value
+      })
+    console.log(event.target.value)
+    testCall.secondCall(event.state.query).then( cuisine =>{
+      this.setState({
+        results: cuisine,
+        query: "",
+        searched: true
+      })
+    })
+
+  }
     // .then(recipes=>{
     //   this.setState({
     //     results: recipes.Search,
@@ -38,7 +56,6 @@ export default class SearchContainer extends React.Component {
     //     searched: true
     //   })
     // })
-  }
   render(){
      if(this.state.searched){
       return (
@@ -51,7 +68,9 @@ export default class SearchContainer extends React.Component {
             </div>
             <div>
               <Results
-              recipes={this.state.results}/>
+              recipes={this.state.results}
+              onSelectRecipe={this.selectRecipe.bind(this)}
+              query={this.state.query}/>
             </div>
           </div>
         )
