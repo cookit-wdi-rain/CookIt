@@ -4,12 +4,13 @@ import ajax      from '../helpers/ajaxAdapter.js'
 export default class RecipeResults extends React.Component {
   render(){
     return (
-      <div>
-        {this.props.recipes.extendedIngredients.map((recipe,i)=>{
+      <div className="recipe_results">
+        {this.props.recipes.map((recipe,i)=>{
           return(
-            <div key={i}>
-              <h3>{recipe.originalString}</h3>
-              <img src={recipe.image} />
+
+            <div className="image_container" key={i}>
+              <h4>{recipe.title}</h4>
+              <img className="recipe_image" src={recipe.img} />
             </div>
             )
         })}
