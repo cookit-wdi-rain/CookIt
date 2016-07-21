@@ -20,6 +20,28 @@ function CuisineCall(query) {
 export default CuisineCall;
 
 
+function IngredientsCall(query) {
+  let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?ingredients='+ query
+
+  return fetch(url, myInit).then(res => res.json() )
+}
+
+
+
+export default IngredientsCall;
+
+
+function FullCall(query) {
+  let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/'+ query + '/information'
+
+  return fetch(url, myInit).then(res => res.json() )
+}
+
+
+
+export default FullCall;
+
+
 
 
 
