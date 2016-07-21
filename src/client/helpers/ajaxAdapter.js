@@ -15,12 +15,42 @@ function CuisineCall(query) {
   return fetch(url, myInit).then(res => res.json() )
 }
 
+// <<<<<<< HEAD
 const testCall = {
+// =======
+// function testCall() {
+//   return fetch('/testapi')
+//   .then(res=>res.json())
+// }
+
+
+// export default testCall;
+
+
+// function IngredientsCall(query) {
+//   let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?ingredients='+ query
+
+//   return fetch(url, myInit).then(res => res.json() )
+// }
+
+
+
+// export default IngredientsCall;
+
+
+// function FullCall(query) {
+//   let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/'+ query + '/information'
+
+//   return fetch(url, myInit).then(res => res.json() )
+// }
+
+// >>>>>>> 11159e03c7727ef25367f82b4a90b83017954298
 
 test() {
   return fetch('/testapi')
   .then(res=>res.json())
 },
+
 
 secondCall(query) {
   return fetch('/testapi/'+query)
@@ -30,6 +60,9 @@ secondCall(query) {
 
 
 export default testCall;
+// =======
+// export default FullCall;
+// >>>>>>> 11159e03c7727ef25367f82b4a90b83017954298
 
 
 
