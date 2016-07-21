@@ -1,12 +1,12 @@
 import React from 'react'
 import Search from './Search.jsx'
-import Results from './Results.jsx'
-import ajax from '../helpers/ajaxAdapter.jsx'
+// import Results from './Results.jsx'
+// import ajax from '../helpers/ajaxAdapter.jsx'
 
 
 export default class SearchContainer extends React.Component {
 
-  contructor(){
+  constructor(){
     super()
     this.state = {
       query:"",
