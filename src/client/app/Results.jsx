@@ -8,7 +8,7 @@ export default class Results extends React.Component {
           return(
             <div key={i}>
               <h3>{recipe.title}</h3>
-              <img src={recipe.img} />
+              <img src={"https://spoonacular.com/recipeImages/"+recipe.image} />
             </div>
             )
         })}

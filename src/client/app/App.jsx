@@ -4,15 +4,6 @@ import SearchContainer    from './SearchContainer.jsx'
 import ajax               from '../helpers/ajaxAdapter.js'
 
 export default class App extends React.Component{
-  constructor() {
-    super();
-
-    this.state = {
-      recipes : {}
-    }
-  }
-
-
     render(){
         return(
 
