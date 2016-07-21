@@ -1,11 +1,9 @@
 import React   from 'react'
 import Search  from './Search.jsx'
-import RecipeResults from './Results.jsx'
-import IngredientResults from './Results.jsx'
-import FullResults from './Results.jsx'
+// import RecipeResults from './Results.jsx'
+// import IngredientResults from './Results.jsx'
+import Results from './Results.jsx'
 
-// import ajax    from '../helpers/ajaxAdapter.jsx'
-// <<<<<<< HEAD
 import testCall from '../helpers/ajaxAdapter.js'
 
 //=======
