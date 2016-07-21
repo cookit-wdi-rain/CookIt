@@ -1,22 +1,14 @@
 import React   from 'react'
 import Search  from './Search.jsx'
-<<<<<<< HEAD
-import CuisineResults from './Results.jsx'
-import IngredientResults from './Results.jsx'
-import RecipeResults from './Results.jsx'
-=======
+
 // import RecipeResults from './Results.jsx'
 // import IngredientResults from './Results.jsx'
 import Results from './Results.jsx'
->>>>>>> 9b6fd9b6180ef4671486f502daff2de098672a49
 
-import testCall from '../helpers/ajaxAdapter.js'
 
-//=======
-// import CuisineCall from '../helpers/ajaxAdapter.js'
-// import IngredientsCall from '../helpers/ajaxAdapter.js'
-// import RecipeCall from '../helpers/ajaxAdapter.js'
-//>>>>>>> 11159e03c7727ef25367f82b4a90b83017954298
+import ajax from '../helpers/ajaxAdapter.js'
+
+
 
 export default class SearchContainer extends React.Component {
   constructor(){
