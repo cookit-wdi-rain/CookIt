@@ -1,7 +1,7 @@
 import React     from 'react'
 import ajax      from '../helpers/ajaxAdapter.js'
 
-export default class RecipeResults extends React.Component {
+export default class CuisineResults extends React.Component {
   render(){
     return (
       <div className="recipe_results">
@@ -45,7 +45,7 @@ export default class IngredientResults extends React.Component {
 }
 
 
-export default class FullResults extends React.Component {
+export default class RecipeResults extends React.Component {
   render(){
     return (
       <div>
