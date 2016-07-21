@@ -5,7 +5,7 @@ var myHeaders = process.env.COOKAPI;
 var myInit = {
   method: 'GET',
   headers: {
-    "X-Mashape-Key": myHeaders
+    "X-Mashape-Key": "02d8I6TtiSmshzL98NMXgYIAfXUzp1B7gzkjsn5kJ5mRqk5r4Y"
   }
 }
 
