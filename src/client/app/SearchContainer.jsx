@@ -2,6 +2,7 @@ import React   from 'react'
 import Search  from './Search.jsx'
 //import Results from './Results.jsx'
 //import ajax    from '../helpers/ajaxAdapter.jsx'
+import CuisineCall from '../helpers/ajaxAdapter.js'
 
 
 export default class SearchContainer extends React.Component {
