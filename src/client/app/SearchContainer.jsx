@@ -1,8 +1,14 @@
 import React   from 'react'
 import Search  from './Search.jsx'
+<<<<<<< HEAD
+import CuisineResults from './Results.jsx'
+import IngredientResults from './Results.jsx'
+import RecipeResults from './Results.jsx'
+=======
 // import RecipeResults from './Results.jsx'
 // import IngredientResults from './Results.jsx'
 import Results from './Results.jsx'
+>>>>>>> 9b6fd9b6180ef4671486f502daff2de098672a49
 
 import testCall from '../helpers/ajaxAdapter.js'
 
@@ -30,9 +36,13 @@ export default class SearchContainer extends React.Component {
 
   handleSubmitSearch(event){
     event.preventDefault();
+<<<<<<< HEAD
+    CuisineCall(this.state.query).then( cuisine =>{
+=======
     console.log(this.state.query)
     testCall.test(this.state.query).then( cuisine =>{
 
+>>>>>>> 9b6fd9b6180ef4671486f502daff2de098672a49
       console.log("Got back cuisine ", cuisine)
       this.setState({
         results: cuisine,
@@ -64,6 +74,29 @@ export default class SearchContainer extends React.Component {
     //     searched: true
     //   })
     // })
+<<<<<<< HEAD
+  }
+
+  handleSubmitSearchIngredients(event){
+    event.preventDefault();
+    IngredientsCall(this.state.query).then( ingredient =>{
+      console.log("Got back ingredient ", ingredient)
+      this.setState({
+        results: ingredient,
+        query:"",
+        searched: true
+      })
+    })
+    // .then(recipes=>{
+    //   this.setState({
+    //     results: recipes.Search,
+    //     query:"",
+    //     searched: true
+    //   })
+    // })
+  }
+=======
+>>>>>>> 9b6fd9b6180ef4671486f502daff2de098672a49
   render(){
      if(this.state.searched){
       return (
@@ -75,12 +108,17 @@ export default class SearchContainer extends React.Component {
               query={this.state.query} />
             </div>
             <div>
+<<<<<<< HEAD
+              <CuisineResults
+              recipes={this.state.results}/>
+=======
 
               <Results
               recipes={this.state.results}
               onSelectRecipe={this.selectRecipe.bind(this)}
               query={this.state.query}/>
 
+>>>>>>> 9b6fd9b6180ef4671486f502daff2de098672a49
             </div>
           </div>
         )

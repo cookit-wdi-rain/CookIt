@@ -12,6 +12,14 @@ export default class Search extends React.Component {
                 type='text'
                 placeholder='Enter Cuisine' />
             </div>
+            <div className='form-group'>
+
+            <input
+              onChange={this.props.onUpdateSearchIngredients}
+              type='text'
+              placeholder='Enter Ingredient' />
+
+            </div>
             <div className="form-group col-sm-4 col-sm-offset-4">
               <button
               type='submit'

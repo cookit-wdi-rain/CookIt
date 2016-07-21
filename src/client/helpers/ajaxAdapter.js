@@ -38,8 +38,13 @@ const testCall = {
 // export default IngredientsCall;
 
 
+<<<<<<< HEAD
+function RecipeCall(query) {
+  let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/'+ query + '/information'
+=======
 // function FullCall(query) {
 //   let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/'+ query + '/information'
+>>>>>>> 9b6fd9b6180ef4671486f502daff2de098672a49
 
 //   return fetch(url, myInit).then(res => res.json() )
 // }
@@ -59,10 +64,14 @@ secondCall(query) {
 }
 
 
+<<<<<<< HEAD
+export default RecipeCall;
+=======
 export default testCall;
 // =======
 // export default FullCall;
 // >>>>>>> 11159e03c7727ef25367f82b4a90b83017954298
+>>>>>>> 9b6fd9b6180ef4671486f502daff2de098672a49
 
 
 
