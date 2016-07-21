@@ -1,6 +1,9 @@
 import React   from 'react'
 import Search  from './Search.jsx'
-import Results from './Results.jsx'
+import RecipeResults from './Results.jsx'
+import IngredientResults from './Results.jsx'
+import FullResults from './Results.jsx'
+
 // import ajax    from '../helpers/ajaxAdapter.jsx'
 import CuisineCall from '../helpers/ajaxAdapter.js'
 import IngredientsCall from '../helpers/ajaxAdapter.js'
@@ -51,7 +54,7 @@ export default class SearchContainer extends React.Component {
               query={this.state.query} />
             </div>
             <div>
-              <Results
+              <IngredientResults
               recipes={this.state.results}/>
             </div>
           </div>
