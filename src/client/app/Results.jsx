@@ -3,12 +3,12 @@ import React     from 'react'
 export default class Results extends React.Component {
   render(){
     return (
-      <div>
+      <div className="recipe_results">
         {this.props.recipes.map((recipe,i)=>{
           return(
-            <div key={i}>
-              <h3>{recipe.title}</h3>
-              <img src={"https://spoonacular.com/recipeImages/"+recipe.image} />
+            <div className="image_container" key={i}>
+              <h4>{recipe.title}</h4>
+              <img className="recipe_image" src={recipe.img} />
             </div>
             )
         })}

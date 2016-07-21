@@ -26,7 +26,7 @@ export default class SearchContainer extends React.Component {
     CuisineCall(this.state.query).then( cuisine =>{
       console.log("Got back cuisine ", cuisine)
       this.setState({
-        results: cuisine.results,
+        results: cuisine,
         query:"",
         searched: true
       })
