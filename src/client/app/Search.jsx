@@ -8,9 +8,9 @@ export default class Search extends React.Component {
           <form onSubmit={this.props.onSubmitSearch}>
             <div className='form-group'>
               <input
-              onChange={this.props.onUpdateSearch}
-              type='text'
-              placeholder='Enter Cuisine' />
+                onChange={this.props.onUpdateSearch}
+                type='text'
+                placeholder='Enter Cuisine' />
             </div>
             <div className='form-group'>
 
