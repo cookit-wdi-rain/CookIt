@@ -15,9 +15,13 @@ function CuisineCall(query) {
   return fetch(url, myInit).then(res => res.json() )
 }
 
+function testCall() {
+  return fetch('/testapi')
+  .then(res=>res.json())
+}
 
 
-export default CuisineCall;
+export default testCall;
 
 
 function IngredientsCall(query) {
