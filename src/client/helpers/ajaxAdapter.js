@@ -1,17 +1,17 @@
 // const ajaxAdapter = {
 
 var myHeaders = process.env.COOKAPI;
-
+var key = process.env.APIKEY
 var myInit = {
   method: 'GET',
   headers: {
-    "X-Mashape-Key": "02d8I6TtiSmshzL98NMXgYIAfXUzp1B7gzkjsn5kJ5mRqk5r4Y"
+    "X-Mashape-Key": myHeaders
   }
 }
 
 function CuisineCall(query) {
   let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine='+ query
-
+  console.log(myHeaders)
   return fetch(url, myInit).then(res => res.json() )
 }
 

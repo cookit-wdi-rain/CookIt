@@ -2,7 +2,7 @@
 
 const env         = process.env.NODE_ENV || 'development';
 const DEV         = env==='development';
-const dotenv      = (DEV) ? require('dotenv').config() : undefined;
+const dotenv      = require('dotenv').config()
 
 const express     = require('express')
 const morgan      = require('morgan')
@@ -15,6 +15,7 @@ const recipeRoute = require('./routes/recipe_route')
 //Dummy SQL database for API replacement during testing
 // const testRoute   = require('./routes/testData')
 const port        = process.argv[2] || process.env.PORT || 3000
+
 
 app.use(morgan( DEV ? 'dev' : 'common'))
 // app.use(morgan('dev'))
@@ -33,5 +34,5 @@ app.use('/pantry', pantryRoute)
 // app.use('/testapi', testRoute)
 
 app.listen(port, ()=>{
-  console.log('Server maxin\' and relaxin\' at ', port)
+  console.log('Server maxin\' and relaxin\' at ',process.env.COOKAPI, port)
 })
