@@ -1,3 +1,4 @@
+
 const ajaxAdapter = {
 
   getRecipes(){
@@ -10,6 +11,7 @@ const ajaxAdapter = {
       method:'post',
       headers:{
         "Content-type": "application/json; charset=UTF-8"
+
       },
       body: JSON.stringify(newRecipe)
     })
@@ -25,7 +27,6 @@ const ajaxAdapter = {
     }).then( r=> r.json() )
   },
 
-
-
 }
 export default ajaxAdapter
+

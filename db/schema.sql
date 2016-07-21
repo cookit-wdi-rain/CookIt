@@ -8,7 +8,9 @@ password TEXT NOT NULL,
 created_at TIMESTAMP NOT NULL DEFAULT now()
 );
 
+
 CREATE INDEX ON users (user_id);
+
 
 
 DROP TABLE IF EXISTS favorite_recipes;
