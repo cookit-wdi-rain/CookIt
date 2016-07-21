@@ -1,6 +1,6 @@
 import React     from 'react'
 
-export default class RecipeResults extends React.Component {
+export default class CuisineResults extends React.Component {
   render(){
     return (
       <div>
@@ -35,7 +35,7 @@ export default class IngredientResults extends React.Component {
 }
 
 
-export default class FullResults extends React.Component {
+export default class RecipeResults extends React.Component {
   render(){
     return (
       <div>

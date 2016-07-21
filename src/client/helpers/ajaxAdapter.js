@@ -31,7 +31,7 @@ function IngredientsCall(query) {
 export default IngredientsCall;
 
 
-function FullCall(query) {
+function RecipeCall(query) {
   let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/'+ query + '/information'
 
   return fetch(url, myInit).then(res => res.json() )
@@ -39,7 +39,7 @@ function FullCall(query) {
 
 
 
-export default FullCall;
+export default RecipeCall;
 
 
 

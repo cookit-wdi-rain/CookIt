@@ -1,8 +1,8 @@
 import React   from 'react'
 import Search  from './Search.jsx'
-import RecipeResults from './Results.jsx'
+import CuisineResults from './Results.jsx'
 import IngredientResults from './Results.jsx'
-import FullResults from './Results.jsx'
+import RecipeResults from './Results.jsx'
 
 // import ajax    from '../helpers/ajaxAdapter.jsx'
 import CuisineCall from '../helpers/ajaxAdapter.js'
@@ -27,10 +27,29 @@ export default class SearchContainer extends React.Component {
 
   handleSubmitSearch(event){
     event.preventDefault();
-    RecipeCall(this.state.query).then( cuisine =>{
+    CuisineCall(this.state.query).then( cuisine =>{
       console.log("Got back cuisine ", cuisine)
       this.setState({
         results: cuisine,
+        query:"",
+        searched: true
+      })
+    })
+    // .then(recipes=>{
+    //   this.setState({
+    //     results: recipes.Search,
+    //     query:"",
+    //     searched: true
+    //   })
+    // })
+  }
+
+  handleSubmitSearchIngredients(event){
+    event.preventDefault();
+    IngredientsCall(this.state.query).then( ingredient =>{
+      console.log("Got back ingredient ", ingredient)
+      this.setState({
+        results: ingredient,
         query:"",
         searched: true
       })
@@ -54,7 +73,7 @@ export default class SearchContainer extends React.Component {
               query={this.state.query} />
             </div>
             <div>
-              <IngredientResults
+              <CuisineResults
               recipes={this.state.results}/>
             </div>
           </div>
