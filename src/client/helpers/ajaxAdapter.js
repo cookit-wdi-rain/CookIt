@@ -1,59 +1,35 @@
-// const ajaxAdapter = {
+// let myInit = {
+//   method: 'GET'
+//   // headers: {
+//   //   "X-Mashape-Key":
+//  }
 
-var myHeaders = process.env.COOKAPI;
+const ajaxAdapter = {
 
-var myInit = {
-  method: 'GET',
-  headers: {
-    "X-Mashape-Key": "02d8I6TtiSmshzL98NMXgYIAfXUzp1B7gzkjsn5kJ5mRqk5r4Y"
-  }
-}
+cuisineCall(query) {
 
-function CuisineCall(query) {
   let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine='+ query
+  return fetch(url, myInit)
+  .then(res => res.json() )
+},
 
-  return fetch(url, myInit).then(res => res.json() )
-}
-
-// <<<<<<< HEAD
-const testCall = {
-// =======
-// function testCall() {
-//   return fetch('/testapi')
-//   .then(res=>res.json())
-// }
-
-
-// export default testCall;
-
-
-// function IngredientsCall(query) {
-//   let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?ingredients='+ query
-
-//   return fetch(url, myInit).then(res => res.json() )
-// }
-
-
-
-// export default IngredientsCall;
-
-
-<<<<<<< HEAD
-function RecipeCall(query) {
-  let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/'+ query + '/information'
-=======
-// function FullCall(query) {
-//   let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/'+ query + '/information'
->>>>>>> 9b6fd9b6180ef4671486f502daff2de098672a49
-
-//   return fetch(url, myInit).then(res => res.json() )
-// }
-
-// >>>>>>> 11159e03c7727ef25367f82b4a90b83017954298
-
-test() {
+testCall() {
   return fetch('/testapi')
   .then(res=>res.json())
+},
+
+
+ingredientsCall(query) {
+  let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?ingredients='+ query
+  return fetch(url, myInit)
+  .then(res => res.json() )
+},
+
+
+recipeCall(query) {
+  let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/'+ query + '/information'
+  return fetch(url, myInit)
+  .then(res => res.json() )
 },
 
 
@@ -61,26 +37,8 @@ secondCall(query) {
   return fetch('/testapi/'+query)
   .then(res=>res.json())
 }
+
 }
-
-
-<<<<<<< HEAD
-export default RecipeCall;
-=======
-export default testCall;
-// =======
-// export default FullCall;
-// >>>>>>> 11159e03c7727ef25367f82b4a90b83017954298
->>>>>>> 9b6fd9b6180ef4671486f502daff2de098672a49
-
-
-
-
-
-
-
-
-
 //   getRecipes(){
 //     return fetch('/recipes')
 //       .then( r=> r.json() )
@@ -107,6 +65,6 @@ export default testCall;
 //     }).then( r=> r.json() )
 //   },
 
-// }
-// export default ajaxAdapter
+
+export default ajaxAdapter;
 
