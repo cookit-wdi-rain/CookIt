@@ -1,8 +1,8 @@
-
 import React   from 'react'
 import Search  from './Search.jsx'
 //import Results from './Results.jsx'
 //import ajax    from '../helpers/ajaxAdapter.jsx'
+import CuisineCall from '../helpers/ajaxAdapter.js'
 
 
 export default class SearchContainer extends React.Component {
@@ -23,14 +23,21 @@ export default class SearchContainer extends React.Component {
 
   handleSubmitSearch(event){
     event.preventDefault();
-    ajax(this.state.query)
-    .then(recipes=>{
+    CuisineCall(this.state.query).then( cuisine =>{
+      console.log("Got back cuisine ", cuisine)
       this.setState({
         results: recipes.Search,
         query:"",
         searched: true
       })
     })
+    // .then(recipes=>{
+    //   this.setState({
+    //     results: recipes.Search,
+    //     query:"",
+    //     searched: true
+    //   })
+    // })
   }
   render(){
     return(
