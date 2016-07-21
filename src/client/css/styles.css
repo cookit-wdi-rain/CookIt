@@ -1,0 +1,24 @@
+
+* {
+  margin: 0 auto;
+}
+
+.recipe_results {
+  text-align: center;
+}
+
+h4 {
+  clear:left;
+}
+
+.recipe_image {
+  height: 275px;
+  width: 275px;
+  border: 2px solid black;
+}
+
+.image_container {
+  display: inline-block;
+  width: 30%;
+
+}
