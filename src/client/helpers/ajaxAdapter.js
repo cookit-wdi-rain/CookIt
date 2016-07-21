@@ -1,13 +1,13 @@
-let myInit = {
-  method: 'GET',
-  headers: {
-    "X-Mashape-Key":
-  }
+// let myInit = {
+//   method: 'GET'
+//   // headers: {
+//   //   "X-Mashape-Key":
+//  }
 
 const ajaxAdapter = {
 
 cuisineCall(query) {
-  }
+
   let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine='+ query
   return fetch(url, myInit)
   .then(res => res.json() )
@@ -38,7 +38,7 @@ secondCall(query) {
   .then(res=>res.json())
 }
 
-
+}
 //   getRecipes(){
 //     return fetch('/recipes')
 //       .then( r=> r.json() )
@@ -65,6 +65,6 @@ secondCall(query) {
 //     }).then( r=> r.json() )
 //   },
 
-}
+
 export default ajaxAdapter;
 

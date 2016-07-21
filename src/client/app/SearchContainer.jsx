@@ -1,8 +1,8 @@
 import React          from 'react'
 import Search         from './Search.jsx'
 import Results        from './Results.jsx'
-import TestingResults from './TestingResults.jsx'
-import RecipeResults  from './CuisineResults.jsx'
+//import TestingResults from './TestingResults.jsx'
+// import RecipeResults  from './CuisineResults.jsx'
 import ajax           from '../helpers/ajaxAdapter.js'
 
 export default class SearchContainer extends React.Component {
@@ -62,7 +62,7 @@ export default class SearchContainer extends React.Component {
         searched: true
       })
     })
-
+  }
   render(){
      if(this.state.searched){
       return (
