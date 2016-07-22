@@ -2,7 +2,7 @@
 
 const env         = process.env.NODE_ENV || 'development';
 const DEV         = env==='development';
-const dotenv      = (DEV) ? require('dotenv').config() : undefined;
+const dotenv      = require('dotenv').config()
 
 const express     = require('express')
 const morgan      = require('morgan')
@@ -17,6 +17,7 @@ const app         = express()
 
 const testRoute   = require('./routes/testData')
 const port        = process.argv[2] || process.env.PORT || 3000
+
 
 app.use(morgan( DEV ? 'dev' : 'common'))
 // app.use(morgan('dev'))
@@ -35,5 +36,5 @@ app.use(bodyParser.json());
 app.use('/testapi', testRoute)
 
 app.listen(port, ()=>{
-  console.log('Server maxin\' and relaxin\' at ', port)
+  console.log('Server maxin\' and relaxin\' at ',process.env.COOKAPI, port)
 })

@@ -3,7 +3,7 @@ import React     from 'react'
 
 export default class Results extends React.Component {
   render(){
-    if(!this.state.selected){
+    if(!this.props.selected){
       return (
         <div className="recipe_results">
           {this.props.recipes.map((recipe,i)=>{

@@ -1,10 +1,10 @@
 
-// const myInit = {
-//   method: 'GET',
-//   headers: {
-//     "X-Mashape-Key":"9nRKaBF7ulmshtZuHpCkDn8KSmPGp19tV5Djsn4isweJZ0ax0S"
-//  }
-// }
+const myInit = {
+  method: 'GET',
+  headers: {
+    "X-Mashape-Key":"9nRKaBF7ulmshtZuHpCkDn8KSmPGp19tV5Djsn4isweJZ0ax0S"
+ }
+}
 
 
 const ajaxAdapter = {
@@ -16,11 +16,11 @@ cuisineCall(query) {
   .then(res => res.json() )
 },
 
+
 testCall() {
   return fetch('/testapi')
   .then(res=>res.json())
 },
-
 
 ingredientsCall(query) {
   let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?ingredients='+ query
@@ -33,6 +33,7 @@ recipeCall(query) {
   let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/'+ query + '/information'
   return fetch(url, myInit)
   .then(res => res.json() )
+
 },
 
 
@@ -41,6 +42,7 @@ secondCall(query) {
   return fetch(`/testapi/${query}`)
   .then(res=>res.json())
 }
+
 
 }
 //   getRecipes(){
@@ -70,5 +72,7 @@ secondCall(query) {
 //   },
 
 
+
 export default ajaxAdapter;
+
 

@@ -34,7 +34,7 @@ node_modules
 
 # environmental variables
 .env
-
+ajaxAdapter.js
 # distribution files
 dist
 
