@@ -1,12 +1,12 @@
 import React     from 'react'
 import ajax      from '../helpers/ajaxAdapter.js'
 
-export default class RecipeResults extends React.Component {
+export default class IngredientResults extends React.Component {
   render(){
     // if(this.state.dropdown === )
     return (
 
-      <div className="recipe_results">
+      <div className="ingredient_results">
         {this.props.recipes.map((recipe,i)=>{
           return(
 
@@ -20,3 +20,4 @@ export default class RecipeResults extends React.Component {
       )
   }
 }
+
