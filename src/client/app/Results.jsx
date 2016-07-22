@@ -10,7 +10,7 @@ export default class RecipeResults extends React.Component {
 
             <div className="image_container" key={i}>
               <h4>{recipe.title}</h4>
-              <img className="recipe_image" src={recipe.img} />
+              <img className="recipe_image" src={"https://spoonacular.com/recipeImages/"+recipe.image} />
             </div>
             )
         })}
