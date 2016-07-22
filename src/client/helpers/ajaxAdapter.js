@@ -1,9 +1,9 @@
-const myInit = {
-  method: 'GET',
-  headers: {
-    "X-Mashape-Key":"
- }
-}
+// const myInit = {
+//   method: 'GET',
+//   headers: {
+//     "X-Mashape-Key":"
+// }
+// }
 
 const ajaxAdapter = {
 
