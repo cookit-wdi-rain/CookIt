@@ -2,6 +2,8 @@ import React              from 'react'
 import ReactDOM           from 'react-dom'
 import SearchContainer    from './SearchContainer.jsx'
 import ajax               from '../helpers/ajaxAdapter.js'
+import Nav                from './Nav.jsx'
+import Footer             from './Footer.jsx'
 
 export default class App extends React.Component{
   constructor() {
@@ -15,10 +17,13 @@ export default class App extends React.Component{
 
     render(){
         return(
-
-            <div>
-            <SearchContainer />
-            </div>
+          <container>
+            <Nav />
+              <div>
+              <SearchContainer />
+              </div>
+            <Footer />
+          </container>
         )
     }
 }
