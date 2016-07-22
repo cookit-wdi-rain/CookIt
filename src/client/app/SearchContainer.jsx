@@ -11,6 +11,7 @@ export default class SearchContainer extends React.Component {
     this.state = {
       query: "",
       searched: false,
+      selected: false,
       results: []
     }
   }
@@ -31,6 +32,7 @@ export default class SearchContainer extends React.Component {
         //results: cuisine.results,
         results:cuisine,
         query:"",
+        selected: false,
         searched: true
       })
     })
@@ -49,6 +51,7 @@ export default class SearchContainer extends React.Component {
     .then( cuisine =>{
       this.setState({
         results: cuisine,
+        selected: true,
         query: "",
         searched: true
       })
