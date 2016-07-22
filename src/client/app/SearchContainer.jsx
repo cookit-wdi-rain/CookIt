@@ -12,6 +12,7 @@ export default class SearchContainer extends React.Component {
       // selected:"",
       query: "",
       searched: false,
+      selected: false,
       results: []
     }
   }
@@ -34,20 +35,26 @@ export default class SearchContainer extends React.Component {
         results: cuisine.results,
         // results:cuisine,
         query:"",
+        selected: false,
         searched: true
       })
     })
+    event.target.reset()
   }
 
   selectRecipe(event){
     event.preventDefault();
+    console.log('doing something')
     this.setState({
       query: event.target.value
       })
     console.log(event.target.value)
-    testCall.secondCall(event.state.query).then( cuisine =>{
+    ajax.secondCall(event.target.value)
+    .then(cuisine => console.log(cuisine))
+    .then( cuisine =>{
       this.setState({
         results: cuisine,
+        selected: true,
         query: "",
         searched: true
       })
@@ -79,7 +86,9 @@ export default class SearchContainer extends React.Component {
             <div>
               <TestingResults
               recipes={this.state.results}
+              //onUpdateSearch={this.handleUpdateSearch.bind(this)}
               onSelectRecipe={this.selectRecipe.bind(this)}
+              selected={this.state.selected}
               query={this.state.query}/>
             </div>
           </div>

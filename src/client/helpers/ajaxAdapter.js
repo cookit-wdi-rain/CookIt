@@ -2,7 +2,7 @@
 const myInit = {
   method: 'GET',
   headers: {
-    "X-Mashape-Key":"9nRKaBF7ulmshtZuHpCkDn8KSmPGp19tV5Djsn4isweJZ0ax0S"
+    "X-Mashape-Key":
  }
 }
 
@@ -45,7 +45,8 @@ recipeCall(query) {
 
 
 secondCall(query) {
-  return fetch('/testapi/'+query)
+  console.log(query)
+  return fetch(`/testapi/${query}`)
   .then(res=>res.json())
 }
 
