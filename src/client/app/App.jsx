@@ -2,14 +2,15 @@ import React              from 'react'
 import ReactDOM           from 'react-dom'
 import SearchContainer    from './SearchContainer.jsx'
 // import ajax               from '../helpers/ajaxAdapter.js'
-
+import SearchContainerTest from './SearchContainerTest.jsx'
 export default class App extends React.Component{
+
 
     render(){
         return(
 
             <div>
-            <SearchContainer />
+            <SearchContainerTest />
             </div>
         )
     }

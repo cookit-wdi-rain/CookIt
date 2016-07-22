@@ -1,42 +1,66 @@
 import React          from 'react'
-// import Search         from './Search.jsx'
+import Search         from './Search.jsx'
 import Results        from './Results.jsx'
-import TestingResults from './TestingResults.jsx'
+import DropTest     from './Droptest.jsx'
+//import TestingResults from './TestingResults.jsx'
 // import RecipeResults  from './CuisineResults.jsx'
 import ajax           from '../helpers/ajaxAdapter.js'
 
 export default class SearchContainer extends React.Component {
+
   constructor(){
     super();
     this.state = {
-      // selected:"",
+      dropdown:"cuisine",
       query: "",
       searched: false,
       results: []
     }
   }
 
+  handleUpdateDrop(event){
+    console.log(event.target.value)
+    this.setState({
+      dropdown: event.target.value,
+    })
+  }
+
   handleUpdateSearch(event){
+    console.log(event.target.value)
     this.setState({
       query: event.target.value
     })
   }
-
-
   handleSubmitSearch(event){
     event.preventDefault();
+    console.log(event.target.value)
+    console.log(this.state.dropdown)
+   if(this.state.dropdown ==="cuisine"){
     ajax.cuisineCall(this.state.query).then( cuisine =>{
     // ajax.testCall(this.state.query).then( cuisine =>{
     //console.log(this.state.query)
-    console.log("Got back cuisine ", cuisine, this.refs.menu.value)
+    console.log("Got back cuisine ", cuisine)
       this.setState({
-        // selected:this.refs.menu.value
         results: cuisine.results,
         // results:cuisine,
         query:"",
         searched: true
       })
     })
+    }
+    else{
+       ajax.ingredientsCall(this.state.query).then( cuisine =>{
+    // ajax.testCall(this.state.query).then( cuisine =>{
+    //console.log(this.state.query)
+    console.log("Got back ingredient ", cuisine)
+      this.setState({
+        results: cuisine.results,
+        // results:cuisine,
+        query:"",
+        searched: true
+      })
+    })
+    }
   }
 
   selectRecipe(event){
@@ -71,13 +95,14 @@ export default class SearchContainer extends React.Component {
       return (
           <div>
             <div>
-              <SearchTest
+              <DropTest
               onUpdateSearch={this.handleUpdateSearch.bind(this)}
+              onUpdateDrop={this.handleUpdateDrop.bind(this)}
               onSubmitSearch={this.handleSubmitSearch.bind(this)}
               query={this.state.query} />
             </div>
             <div>
-              <TestingResults
+              <Results
               recipes={this.state.results}
               onSelectRecipe={this.selectRecipe.bind(this)}
               query={this.state.query}/>
@@ -86,8 +111,9 @@ export default class SearchContainer extends React.Component {
         )
       } else {
       return(
-        <SearchTest
-        onUpdateSearch={this.handleUpdateSearch.bind(this)}
+        <DropTest
+         onUpdateSearch={this.handleUpdateSearch.bind(this)}
+        onUpdateDrop={this.handleUpdateDrop.bind(this)}
         onSubmitSearch={this.handleSubmitSearch.bind(this)}
         query={this.state.query}
         />
@@ -95,8 +121,6 @@ export default class SearchContainer extends React.Component {
     }
   }
 }
-
-
 
 
 

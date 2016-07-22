@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CookIt
 
 ##Summary 
@@ -85,3 +86,6 @@ API's <br>
 ## Hurdles
 
 1. Finding a free and information rich API
+=======
+#CookIt
+>>>>>>> 70fde8eda75d2c7412a70e2eae336acb7330693b
