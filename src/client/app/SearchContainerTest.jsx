@@ -43,19 +43,19 @@ export default class SearchContainer extends React.Component {
       this.setState({
         results: cuisine.results,
         // results:cuisine,
+        // dropdown:event.state.dropdown,
         query:"",
         searched: true
       })
     })
     }
-    else{
-       ajax.ingredientsCall(this.state.query).then( cuisine =>{
+    if(this.state.dropdown==="ingredient"){
+       ajax.ingredientsCall(this.state.query).then( ingredient =>{
     // ajax.testCall(this.state.query).then( cuisine =>{
     //console.log(this.state.query)
-    console.log("Got back ingredient ", cuisine)
+    console.log("Got back ingredient ", ingredient)
       this.setState({
-        results: cuisine.results,
-        // results:cuisine,
+        results: ingredient.results,
         query:"",
         searched: true
       })
@@ -79,17 +79,17 @@ export default class SearchContainer extends React.Component {
 
   }
 
-  handleSubmitSearchIngredients(event){
-    event.preventDefault();
-    IngredientsCall(this.state.query).then( ingredient =>{
-      console.log("Got back ingredient ", ingredient)
-      this.setState({
-        results: ingredient,
-        query: "",
-        searched: true
-      })
-    })
-  }
+  // handleSubmitSearchIngredients(event){
+  //   event.preventDefault();
+  //   IngredientsCall(this.state.query).then( ingredient =>{
+  //     console.log("Got back ingredient ", ingredient)
+  //     this.setState({
+  //       results: ingredient,
+  //       query: "",
+  //       searched: true
+  //     })
+  //   })
+  // }
   render(){
      if(this.state.searched){
       return (
@@ -105,7 +105,8 @@ export default class SearchContainer extends React.Component {
               <Results
               recipes={this.state.results}
               onSelectRecipe={this.selectRecipe.bind(this)}
-              query={this.state.query}/>
+              dropdown={this.state.dropdown}
+              />
             </div>
           </div>
         )
