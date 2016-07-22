@@ -1,18 +1,40 @@
 import React     from 'react'
+import ajax      from '../helpers/ajaxAdapter.js'
 
-export default class Results extends React.Component {
+export default class RecipeResults extends React.Component {
   render(){
+    if(this.props.dropdown === "cuisine"){
     return (
-      <div>
+
+      <div className="recipe_results">
         {this.props.recipes.map((recipe,i)=>{
           return(
-            <div key={i}>
-              <h3>{recipe.title}</h3>
-              <img src={recipe.img} />
+
+            <div className="image_container" key={i}>
+              <h4>{recipe.title}</h4>
+              <img className="recipe_image" src={"https://spoonacular.com/recipeImages/"+recipe.image} />
             </div>
             )
-        })}
+        })
+      }
       </div>
       )
-  }
+
+  } else{
+    return(
+    <div className="recipe_results">
+        {this.props.recipes.map((recipe,i)=>{
+          return(
+            <div className="image_container" key={i}>
+              <h4>{recipe.title}</h4>
+              <img className="recipe_image" src={recipe.image} />
+            </div>
+
+            )
+          })
+        }
+    </div>
+    )
+      }
+    }
 }
