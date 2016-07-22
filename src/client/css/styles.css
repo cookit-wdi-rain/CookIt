@@ -22,3 +22,13 @@ h4 {
   width: 30%;
 
 }
+
+.headerLogo {
+  height: 100px;
+  width: 100px;
+}
+
+.headerName {
+  text-align: center;
+  color: #ffffff;
+}

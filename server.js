@@ -36,5 +36,5 @@ app.use(bodyParser.json());
 app.use('/testapi', testRoute)
 
 app.listen(port, ()=>{
-  console.log('Server maxin\' and relaxin\' at ',process.env.COOKAPI, port)
+  console.log('Server maxin\' and relaxin\' at ', port)
 })
