@@ -1,7 +1,7 @@
 const myInit = {
   method: 'GET',
   headers: {
-    "X-Mashape-Key":"dm13k9fBqbmshdq29uZj0tbo8PWpp1MBJ3bjsnqF2V1ysXxiCT"
+    "X-Mashape-Key":"
  }
 }
 
