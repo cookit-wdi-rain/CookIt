@@ -55,7 +55,7 @@ export default class SearchContainer extends React.Component {
     //console.log(this.state.query)
     console.log("Got back ingredient ", ingredient)
       this.setState({
-        results: ingredient.results,
+        results: ingredient,
         query:"",
         searched: true
       })

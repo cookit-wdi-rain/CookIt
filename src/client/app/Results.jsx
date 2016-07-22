@@ -20,6 +20,7 @@ export default class RecipeResults extends React.Component {
       </div>
       )
   } else{
+    return(
     <div className="recipe_results">
         {this.props.recipes.map((recipe,i)=>{
           return(
@@ -33,6 +34,7 @@ export default class RecipeResults extends React.Component {
           })
         }
     </div>
+    )
       }
     }
 }
