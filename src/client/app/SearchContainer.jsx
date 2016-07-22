@@ -1,48 +1,71 @@
 import React          from 'react'
-// import Search         from './Search.jsx'
+import Search         from './Search.jsx'
 import Results        from './Results.jsx'
-import TestingResults from './TestingResults.jsx'
+import DropTest     from './Droptest.jsx'
+//import TestingResults from './TestingResults.jsx'
 // import RecipeResults  from './CuisineResults.jsx'
 import ajax           from '../helpers/ajaxAdapter.js'
-// import SearchTest     from './Searchtest.jsx'
+
 export default class SearchContainer extends React.Component {
+
   constructor(){
     super();
     this.state = {
-      // selected:"",
+      dropdown:"cuisine",
       query: "",
       searched: false,
-      selected: false,
-      results: []
+      results: [],
+      selected: false
     }
   }
 
+  handleUpdateDrop(event){
+    console.log(event.target.value)
+    this.setState({
+      dropdown: event.target.value,
+    })
+  }
+
   handleUpdateSearch(event){
+    console.log(event.target.value)
     this.setState({
       query: event.target.value
     })
   }
-
-
   handleSubmitSearch(event){
     event.preventDefault();
+    console.log(event.target.value)
+    console.log(this.state.dropdown)
+   if(this.state.dropdown ==="cuisine"){
     ajax.cuisineCall(this.state.query).then( cuisine =>{
     // ajax.testCall(this.state.query).then( cuisine =>{
     //console.log(this.state.query)
-    console.log("Got back cuisine ", cuisine, this.refs.menu.value)
+    console.log("Got back cuisine ", cuisine)
       this.setState({
-        // selected:this.refs.menu.value
         results: cuisine.results,
         // results:cuisine,
+        dropdown:this.state.dropdown,
         query:"",
-        selected: false,
         searched: true
       })
     })
-    event.target.reset()
+    }
+    if(this.state.dropdown === "ingredient"){
+       ajax.ingredientsCall(this.state.query).then( ingredient =>{
+    // ajax.testCall(this.state.query).then( ingredient =>{
+    //console.log(this.state.query)
+    console.log(ingredient)
+      this.setState({
+        results: ingredient,
+        dropdown:this.state.dropdown,
+        query:"",
+        searched: true
+      })
+    })
+    }
   }
 
-  selectRecipe(event){
+ selectRecipe(event){
     event.preventDefault();
     console.log('doing something')
     this.setState({
@@ -62,41 +85,42 @@ export default class SearchContainer extends React.Component {
 
   }
 
-  handleSubmitSearchIngredients(event){
-    event.preventDefault();
-    IngredientsCall(this.state.query).then( ingredient =>{
-      console.log("Got back ingredient ", ingredient)
-      this.setState({
-        results: ingredient,
-        query: "",
-        searched: true
-      })
-    })
-  }
+  // handleSubmitSearchIngredients(event){
+  //   event.preventDefault();
+  //   IngredientsCall(this.state.query).then( ingredient =>{
+  //     console.log("Got back ingredient ", ingredient)
+  //     this.setState({
+  //       results: ingredient,
+  //       query: "",
+  //       searched: true
+  //     })
+  //   })
+  // }
   render(){
      if(this.state.searched){
       return (
           <div>
             <div>
-              <SearchTest
+              <DropTest
               onUpdateSearch={this.handleUpdateSearch.bind(this)}
+              onUpdateDrop={this.handleUpdateDrop.bind(this)}
               onSubmitSearch={this.handleSubmitSearch.bind(this)}
               query={this.state.query} />
             </div>
             <div>
-              <TestingResults
+              <Results
               recipes={this.state.results}
-              //onUpdateSearch={this.handleUpdateSearch.bind(this)}
               onSelectRecipe={this.selectRecipe.bind(this)}
-              selected={this.state.selected}
-              query={this.state.query}/>
+              dropdown={this.state.dropdown}
+              />
             </div>
           </div>
         )
       } else {
       return(
-        <SearchTest
-        onUpdateSearch={this.handleUpdateSearch.bind(this)}
+        <DropTest
+         onUpdateSearch={this.handleUpdateSearch.bind(this)}
+        onUpdateDrop={this.handleUpdateDrop.bind(this)}
         onSubmitSearch={this.handleSubmitSearch.bind(this)}
         query={this.state.query}
         />
@@ -104,8 +128,6 @@ export default class SearchContainer extends React.Component {
     }
   }
 }
-
-
 
 
 
