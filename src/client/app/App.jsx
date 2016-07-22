@@ -8,7 +8,6 @@ import Nav                from './Nav.jsx'
 
 
 // import ajax               from '../helpers/ajaxAdapter.js'
-// import SearchContainerTest from './SearchContainerTest.jsx'
 
 export default class App extends React.Component{
 
@@ -23,6 +22,10 @@ export default class App extends React.Component{
           </container>
 
 
+
+            <div>
+            <SearchContainer />
+            </div>
         )
     }
 }
