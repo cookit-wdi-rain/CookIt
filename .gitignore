@@ -37,3 +37,7 @@ node_modules
 
 # distribution files
 dist
+
+
+#the keys
+ajaxAdapter.js
