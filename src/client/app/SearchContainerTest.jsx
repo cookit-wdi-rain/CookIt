@@ -49,13 +49,13 @@ export default class SearchContainer extends React.Component {
       })
     })
     }
-    if(this.state.dropdown==="ingredient"){
+    if(this.state.dropdown === "ingredient"){
        ajax.ingredientsCall(this.state.query).then( ingredient =>{
     // ajax.testCall(this.state.query).then( cuisine =>{
     //console.log(this.state.query)
-    console.log("Got back ingredient ", ingredient)
+    console.log(ingredient)
       this.setState({
-        results: ingredient.results,
+        results: ingredient,
         query:"",
         searched: true
       })
