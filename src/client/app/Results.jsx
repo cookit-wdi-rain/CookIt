@@ -19,7 +19,9 @@ export default class RecipeResults extends React.Component {
       }
       </div>
       )
-  } else if(this.props.dropdown === "ingredient"){
+
+  } else{
+    return(
     <div className="recipe_results">
         {this.props.recipes.map((recipe,i)=>{
           return(
@@ -32,6 +34,7 @@ export default class RecipeResults extends React.Component {
           })
         }
     </div>
+    )
       }
     }
 }
