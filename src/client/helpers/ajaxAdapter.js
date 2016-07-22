@@ -2,7 +2,7 @@
 const myInit = {
   method: 'GET',
   headers: {
-    "X-Mashape-Key":"Testing testing 1,2,3"
+    "X-Mashape-Key":
  }
 }
 
