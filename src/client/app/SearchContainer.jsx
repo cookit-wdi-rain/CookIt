@@ -1,7 +1,7 @@
 import React          from 'react'
 import Search         from './Search.jsx'
 import Results        from './Results.jsx'
-//import TestingResults from './TestingResults.jsx'
+import TestingResults from './TestingResults.jsx'
 // import RecipeResults  from './CuisineResults.jsx'
 import ajax           from '../helpers/ajaxAdapter.js'
 
@@ -34,15 +34,19 @@ export default class SearchContainer extends React.Component {
         searched: true
       })
     })
+    event.target.reset()
   }
 
   selectRecipe(event){
     event.preventDefault();
+    console.log('doing something')
     this.setState({
       query: event.target.value
       })
     console.log(event.target.value)
-    testCall.secondCall(event.state.query).then( cuisine =>{
+    ajax.secondCall(event.target.value)
+    .then(cuisine => console.log(cuisine))
+    .then( cuisine =>{
       this.setState({
         results: cuisine,
         query: "",
@@ -74,8 +78,9 @@ export default class SearchContainer extends React.Component {
               query={this.state.query} />
             </div>
             <div>
-              <Results
+              <TestingResults
               recipes={this.state.results}
+              //onUpdateSearch={this.handleUpdateSearch.bind(this)}
               onSelectRecipe={this.selectRecipe.bind(this)}
               query={this.state.query}/>
             </div>
