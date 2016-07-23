@@ -1,5 +1,5 @@
 import React     from 'react'
-//import ajax      from '../helpers/ajaxAdapter.js'
+import ajax      from '../helpers/ajaxAdapter.js'
 
 export default class ResultsSelected extends React.Component {
   render(){
