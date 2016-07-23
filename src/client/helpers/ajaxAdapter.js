@@ -46,7 +46,14 @@ secondCall(query) {
   console.log(query)
   return fetch(`/testapi/${query}`)
   .then(res=>res.json())
+},
+
+pantryCall() {
+  return fetch('/pantry')
+  .then(res=>console.log(res))
+  .then(res=>res.json())
 }
+
 
 
 }
