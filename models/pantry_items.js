@@ -13,7 +13,7 @@ const _db = pg(config);
 
 module.exports = {
   getPantryItems(req,res,next) {
-    _db.any(`SELECT * FROM pantry_items;`)
+    _db.any(`SELECT ingredient_name FROM pantry_items;`)
        .then( pantry_items => {
         res.rows = pantry_items;
         next()
