@@ -12,7 +12,9 @@ export default class RecipeResults extends React.Component {
 
             <div className="image_container" key={i}>
               <h4>{recipe.title}</h4>
-              <img className="recipe_image" src={"https://spoonacular.com/recipeImages/"+recipe.image} />
+              <img className="recipe_image" src={"https://spoonacular.com/recipeImages/"+recipe.image}
+              onClick={this.props.onSelectRecipe}
+              alt={recipe.id} />
             </div>
             )
         })
@@ -27,7 +29,9 @@ export default class RecipeResults extends React.Component {
           return(
             <div className="image_container" key={i}>
               <h4>{recipe.title}</h4>
-              <img className="recipe_image" src={recipe.image} />
+              <img className="recipe_image" src={recipe.image}
+              onClick={this.props.onSelectRecipe}
+              alt={recipe.id}  />
             </div>
 
             )

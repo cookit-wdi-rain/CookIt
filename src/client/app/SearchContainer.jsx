@@ -1,11 +1,9 @@
-import React          from 'react'
-import Search         from './Search.jsx'
+import React           from 'react'
+import Search          from './Search.jsx'
 
-import Results        from './Results.jsx'
+import Results         from './Results.jsx'
 import ResultsSelected from './ResultsSelected.jsx'
-import DropTest       from './Droptest.jsx'
-
-import ajax           from '../helpers/ajaxAdapter.js'
+import ajax            from '../helpers/ajaxAdapter.js'
 
 export default class SearchContainer extends React.Component {
 
@@ -86,23 +84,13 @@ export default class SearchContainer extends React.Component {
 
   }
 
-  // handleSubmitSearchIngredients(event){
-  //   event.preventDefault();
-  //   IngredientsCall(this.state.query).then( ingredient =>{
-  //     console.log("Got back ingredient ", ingredient)
-  //     this.setState({
-  //       results: ingredient,
-  //       query: "",
-  //       searched: true
-  //     })
-  //   })
-  // }
+
   render(){
       if(this.state.searched&&this.state.selected){
       return (
           <div>
             <div>
-              <DropTest
+              <Search
               onUpdateSearch={this.handleUpdateSearch.bind(this)}
               onUpdateDrop={this.handleUpdateDrop.bind(this)}
               onSubmitSearch={this.handleSubmitSearch.bind(this)}
@@ -122,7 +110,7 @@ export default class SearchContainer extends React.Component {
       return (
           <div>
             <div>
-              <DropTest
+              <Search
               onUpdateSearch={this.handleUpdateSearch.bind(this)}
               onUpdateDrop={this.handleUpdateDrop.bind(this)}
               onSubmitSearch={this.handleSubmitSearch.bind(this)}
@@ -139,7 +127,7 @@ export default class SearchContainer extends React.Component {
         )
       } else {
       return(
-        <DropTest
+        <Search
          onUpdateSearch={this.handleUpdateSearch.bind(this)}
         onUpdateDrop={this.handleUpdateDrop.bind(this)}
         onSubmitSearch={this.handleSubmitSearch.bind(this)}
