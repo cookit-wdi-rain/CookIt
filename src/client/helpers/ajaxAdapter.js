@@ -10,6 +10,7 @@ const myInit = {
 const ajaxAdapter = {
 
 cuisineCall(query) {
+  let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine='+ query
   return fetch(url, myInit)
   .then(res => res.json() )
 },
