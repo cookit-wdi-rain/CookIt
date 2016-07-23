@@ -1,3 +1,4 @@
+
 import React            from 'react'
 import Search           from './Search.jsx'
 import Results          from './Results.jsx'
@@ -84,17 +85,7 @@ export default class SearchContainer extends React.Component {
 
   }
 
-  // handleSubmitSearchIngredients(event){
-  //   event.preventDefault();
-  //   IngredientsCall(this.state.query).then( ingredient =>{
-  //     console.log("Got back ingredient ", ingredient)
-  //     this.setState({
-  //       results: ingredient,
-  //       query: "",
-  //       searched: true
-  //     })
-  //   })
-  // }
+
   render(){
       if(this.state.searched&&this.state.selected){
       return (
