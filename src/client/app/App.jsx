@@ -1,7 +1,10 @@
 import React              from 'react'
 import ReactDOM           from 'react-dom'
 import SearchContainer    from './SearchContainer.jsx'
+import Header             from './Header.jsx'
 // import ajax               from '../helpers/ajaxAdapter.js'
+
+
 
 export default class App extends React.Component{
 
@@ -10,6 +13,7 @@ export default class App extends React.Component{
         return(
 
             <div>
+            <Header />
             <SearchContainer />
             </div>
         )
