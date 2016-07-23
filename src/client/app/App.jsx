@@ -3,7 +3,6 @@ import ReactDOM           from 'react-dom'
 import SearchContainer    from './SearchContainer.jsx'
 
 import Header             from './Header.jsx'
-
 // import ajax               from '../helpers/ajaxAdapter.js'
 
 
