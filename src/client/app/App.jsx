@@ -14,18 +14,11 @@ export default class App extends React.Component{
     render(){
         return(
           <container>
-            <Nav />
               <div>
+              <Header />
               <SearchContainer />
               </div>
           </container>
-
-
-
-            <div>
-            <Header />
-            <SearchContainer />
-            </div>
         )
     }
 }
