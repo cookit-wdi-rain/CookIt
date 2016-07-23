@@ -71,17 +71,14 @@ export default class SearchContainer extends React.Component {
  selectRecipe(event){
     event.preventDefault();
     console.log(event.target.alt)
-    this.setState({
-      selected: true
-      })
     //ajax.secondCall(event.target.alt)
     ajax.recipeCall(event.target.alt)
     .then( cuisine =>{
-      console.log(cuisine)
       this.setState({
         results: cuisine,
         //ingredients: cuisine.ingredients.split(", "),
         query: "",
+        selected: true
       })
     })
 
