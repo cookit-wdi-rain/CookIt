@@ -16,9 +16,27 @@ h4 {
   width: 275px;
   border: 2px solid black;
 }
-
 .image_container {
   display: inline-block;
   width: 30%;
+}
 
+.header {
+  text-align: center;
+}
+.jumbotron{
+  background: none;
+}
+.input-group{
+  background-color: #eeeeee;
+  width: 50%;
+  border: 0;
+  height: 30px;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 14px auto;
+}
+.input-group:focus{
+  border: 0;
+  outline:0;
 }

@@ -1,8 +1,10 @@
 import React          from 'react'
 import Search         from './Search.jsx'
+
 import Results        from './TestingResults.jsx'
 import ResultsSelected from './ResultsSelected.jsx'
 import DropTest       from './Droptest.jsx'
+
 import ajax           from '../helpers/ajaxAdapter.js'
 
 export default class SearchContainer extends React.Component {
