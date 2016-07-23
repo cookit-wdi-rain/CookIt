@@ -20,14 +20,14 @@ export default class SearchContainer extends React.Component {
   }
 
   handleUpdateDrop(event){
-    console.log(event.target.value)
+    // console.log(event.target.value)
     this.setState({
       dropdown: event.target.value,
     })
   }
 
   handleUpdateSearch(event){
-    console.log(event.target.value)
+    // console.log(event.target.value)
     this.setState({
       query: event.target.value
     })
@@ -35,7 +35,7 @@ export default class SearchContainer extends React.Component {
 
   handleSubmitSearch(event){
   event.preventDefault();
-  console.log(this.state.dropdown)
+  // console.log(this.state.dropdown)
   if(this.state.dropdown ==="cuisine"){
     ajax.cuisineCall(this.state.query).then( cuisine =>{
   // ajax.testCall(this.state.query).then( cuisine =>{
