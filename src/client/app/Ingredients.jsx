@@ -5,17 +5,21 @@ export default class Ingredients extends React.Component {
 
   render(){
     return (
-
       <div className="ingredients">
-        <h3>Ingredients</h3>
-        <ul>
-          <li>Sausage</li>
-          <li>Peppers</li>
-          <li>Bacon</li>
-        </ul>
+        <div>
+            {this.props.recipes.extendedIngredients
+            .map((item,i)=>{
+              return (
 
+                // <div key={i}>
+                  <ul>
+                    <li><button key={i}>{item.name}</button></li>
+                  </ul>
+                // </div>
+              )
+            })}
+        </div>
       </div>
-
     )
   }
 }
