@@ -7,28 +7,28 @@ apikey:       process.env.COOKAPI,
 };
 
 module.exports = {
-  cuisineCall(req,res,next){
-    console.log('req.body', req.body)
-    let query = req.body.query
+   searchCuisine(req,res,next) {
+    console.log('req.body = ', req.body);
+    // let title = req.body.title;
+    // let queryParams = { t: title, r: 'json' };
+    let api_url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine='
+
+    console.log("queryParams = ", queryParams);
     request({
-      url:https:"//spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine="+apikey,
-      method: 'GET',
-      json: true
-    }, function(error,response, data){
-      if(error);
-      throw error;
-    } else {
-      console.log(response.statusCode, data);
-      console.log(' backend data =', data)
-      res.rows = data
-      next()
-    }
-
-    })
-  }
-
-
-
-
-
+        url: api_url, //URL to hit
+        // qs: queryParams, //Query string data
+        method: 'GET', //Specify the method
+        json: true
+    }, function(error, response, data){
+        if(error) {
+          console.log(error);
+          throw error;
+        } else {
+          console.log(response.statusCode, data);
+          console.log("backend data = ", data);
+          res.rows = data;
+          next();
+        }
+    });
+  },
 }
