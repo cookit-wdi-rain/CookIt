@@ -8,7 +8,7 @@ export default class Results extends React.Component {
           {this.props.recipes.map((recipe,i)=>{
             return(
               <div className="image_container" key={i}>
-                <h4>{recipe.title}</h4>\
+                <h4>{recipe.title}</h4>
 
                   <img className="recipe_image" src={"https://spoonacular.com/recipeImages/"+recipe.image}
                   onClick={this.props.onSelectRecipe}

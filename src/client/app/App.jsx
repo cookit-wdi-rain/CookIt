@@ -2,12 +2,11 @@ import React              from 'react'
 import ReactDOM           from 'react-dom'
 import SearchContainer    from './SearchContainer.jsx'
 
-import ajax               from '../helpers/ajaxAdapter.js'
-import Nav                from './Nav.jsx'
-// import Footer             from './Footer.jsx'
-
+import Header             from './Header.jsx'
 
 // import ajax               from '../helpers/ajaxAdapter.js'
+
+
 
 export default class App extends React.Component{
 
@@ -24,6 +23,7 @@ export default class App extends React.Component{
 
 
             <div>
+            <Header />
             <SearchContainer />
             </div>
         )
