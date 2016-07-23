@@ -1,11 +1,8 @@
-import React          from 'react'
-import Search         from './Search.jsx'
-
-import Results        from './TestingResults.jsx'
+import React           from 'react'
+import Search          from './Search.jsx'
+import Results         from './Results.jsx'
 import ResultsSelected from './ResultsSelected.jsx'
-import DropTest       from './Droptest.jsx'
-
-import ajax           from '../helpers/ajaxAdapter.js'
+import ajax            from '../helpers/ajaxAdapter.js'
 
 export default class SearchContainer extends React.Component {
 
@@ -53,10 +50,10 @@ export default class SearchContainer extends React.Component {
     })
     }
     if(this.state.dropdown === "ingredient"){
-       // ajax.ingredientsCall(this.state.query).then( ingredient =>{
-      ajax.testCall(this.state.query).then( ingredient =>{
+       ajax.ingredientsCall(this.state.query).then( ingredient =>{
+      // ajax.testCall(this.state.query).then( ingredient =>{
     //console.log(this.state.query)
-    console.log(ingredient)
+    console.log("ingredients",ingredient)
       this.setState({
         results: ingredient,
         dropdown:this.state.dropdown,
@@ -102,7 +99,7 @@ export default class SearchContainer extends React.Component {
       return (
           <div>
             <div>
-              <DropTest
+              <Search
               onUpdateSearch={this.handleUpdateSearch.bind(this)}
               onUpdateDrop={this.handleUpdateDrop.bind(this)}
               onSubmitSearch={this.handleSubmitSearch.bind(this)}
@@ -122,7 +119,7 @@ export default class SearchContainer extends React.Component {
       return (
           <div>
             <div>
-              <DropTest
+              <Search
               onUpdateSearch={this.handleUpdateSearch.bind(this)}
               onUpdateDrop={this.handleUpdateDrop.bind(this)}
               onSubmitSearch={this.handleSubmitSearch.bind(this)}
@@ -139,7 +136,7 @@ export default class SearchContainer extends React.Component {
         )
       } else {
       return(
-        <DropTest
+        <Search
          onUpdateSearch={this.handleUpdateSearch.bind(this)}
         onUpdateDrop={this.handleUpdateDrop.bind(this)}
         onSubmitSearch={this.handleSubmitSearch.bind(this)}
