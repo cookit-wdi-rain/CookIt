@@ -5,6 +5,7 @@ import Results          from './Results.jsx'
 import ResultsSelected  from './ResultsSelected.jsx'
 import ajax             from '../helpers/ajaxAdapter.js'
 
+
 export default class SearchContainer extends React.Component {
 
   constructor(){
@@ -61,6 +62,7 @@ export default class SearchContainer extends React.Component {
       dropdown:this.state.dropdown,
       query:"",
       searched: true
+
     })
   })
   }
@@ -104,7 +106,6 @@ export default class SearchContainer extends React.Component {
             </div>
             <div>
               <ResultsSelected
-
               recipes={this.state.results}
               onSelectRecipe={this.selectRecipe.bind(this)}
               dropdown={this.state.dropdown}
@@ -134,6 +135,7 @@ export default class SearchContainer extends React.Component {
       } else {
       return(
         <Search
+
         onUpdateSearch={this.handleUpdateSearch.bind(this)}
         onUpdateDrop={this.handleUpdateDrop.bind(this)}
         onSubmitSearch={this.handleSubmitSearch.bind(this)}
