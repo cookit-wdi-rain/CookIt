@@ -75,7 +75,12 @@ export default class SearchContainer extends React.Component {
     //ajax.secondCall(event.target.alt)
     ajax.recipeCall(event.target.alt)
     .then( cuisine =>{
-      console.log(cuisine)
+      cuisine.extendedIngredients
+        .map((item,i)=>{
+          console.log(item.name)
+      }
+      )
+
       this.setState({
         results: cuisine,
         //ingredients: cuisine.ingredients.split(", "),
