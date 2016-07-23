@@ -40,3 +40,13 @@ h4 {
   border: 0;
   outline:0;
 }
+
+.headerLogo {
+  height: 100px;
+  width: 100px;
+}
+
+.headerName {
+  text-align: center;
+  color: #ffffff;
+}
