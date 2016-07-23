@@ -38,8 +38,8 @@ export default class SearchContainer extends React.Component {
   event.preventDefault();
   // console.log(this.state.dropdown)
   if(this.state.dropdown ==="cuisine"){
-    // ajax.cuisineCall(this.state.query).then( cuisine =>{
-  ajax.testCall(this.state.query).then( cuisine =>{
+    ajax.cuisineCall(this.state.query).then( cuisine =>{
+  // ajax.testCall(this.state.query).then( cuisine =>{
   //console.log(this.state.query)
       console.log("Got back cuisine ", cuisine)
       this.setState({
@@ -127,7 +127,6 @@ export default class SearchContainer extends React.Component {
       } else {
       return(
         <Search
-
         onUpdateSearch={this.handleUpdateSearch.bind(this)}
         onUpdateDrop={this.handleUpdateDrop.bind(this)}
         onSubmitSearch={this.handleSubmitSearch.bind(this)}
