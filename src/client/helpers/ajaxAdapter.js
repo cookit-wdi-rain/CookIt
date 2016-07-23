@@ -10,6 +10,7 @@ const myInit = {
 const ajaxAdapter = {
 
 cuisineCall(query) {
+  let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine='+ query + '&number=12'
   return fetch(url, myInit)
   .then(res => res.json() )
 },
@@ -21,7 +22,7 @@ testCall() {
 },
 
 ingredientsCall(query) {
-  let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?ingredients='+ query
+  let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?ingredients='+ query.replace(/\s/,'%2C')+ '&number=12'
   return fetch(url, myInit)
   .then(res => res.json() )
 
