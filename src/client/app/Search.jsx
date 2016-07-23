@@ -25,11 +25,7 @@ export default class Search extends React.Component {
         </form>
       </div>
             </div>
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 869996822571042a9aab5b3595cac8b8b04b6af1
       );
     }
 

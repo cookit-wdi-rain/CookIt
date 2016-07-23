@@ -101,7 +101,6 @@ export default class SearchContainer extends React.Component {
             </div>
             <div>
               <ResultsSelected
-
               recipes={this.state.results}
               onSelectRecipe={this.selectRecipe.bind(this)}
               dropdown={this.state.dropdown}
