@@ -1,7 +1,7 @@
 import React          from 'react'
 import Search         from './Search.jsx'
 
-import Results        from './TestingResults.jsx'
+import Results        from './Results.jsx'
 import ResultsSelected from './ResultsSelected.jsx'
 import DropTest       from './Droptest.jsx'
 
