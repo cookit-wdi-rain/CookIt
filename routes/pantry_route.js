@@ -14,7 +14,7 @@ pantry.route('/:item_id')
 
 pantry.route('/')
   .get(db.getPantryItems, sendJSONresp)
-  .post(db.addPantryItem, sendJSONresp)
+  .post(db.addPantryItem, (req,res) => res.status(201).json({data: 'success'}).end())
 
 
 
