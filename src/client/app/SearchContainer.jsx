@@ -93,6 +93,15 @@ addToPantry(event){
     })})
   }
 
+deleteFromPantry(event){
+  event.preventDefault();
+  let item = {item: event.target.value}
+  ajax.deletePantry(item).then(pantry=>{
+    ajax.pantryCall().then(pantry=>{
+      this.setState({pantry: pantry})
+    })
+  })
+}
 
 
  selectRecipe(event){
@@ -142,6 +151,7 @@ addToPantry(event){
 
             <div className="col-sm-4">
               <Pantry
+                deletePantry={this.deleteFromPantry.bind(this)}
                 pantry={this.state.pantry}
               />
 

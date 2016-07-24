@@ -35,6 +35,16 @@ addPantry(item){
     .then( r=> r.json() )
   },
 
+deletePantry(item){
+    return fetch('/pantry',{
+      method:'DELETE',
+      headers:{
+        "Content-type": "application/json; charset=UTF-8"
+      },
+      body: JSON.stringify(item)
+    })
+    .then( r=> console.log(r) )
+  },
 
   cuisineCall(query) {
     let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine='+ query + '&number=12'
