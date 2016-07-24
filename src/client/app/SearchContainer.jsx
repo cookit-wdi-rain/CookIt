@@ -111,19 +111,29 @@ pantryItem(){
       return (
           <div className="row">
 
+            <div className="col-sm-4">
+              <Ingredients
+                recipes={this.state.results}
+               />
+            </div>
+
+            <div className="col-sm-4">
               <ResultsSelected
               recipes={this.state.results}
               onSelectRecipe={this.selectRecipe.bind(this)}
               dropdown={this.state.dropdown}
               />
-              <Ingredients
-                recipes={this.state.results}
-               />
+            </div>
+
+            <div className="col-sm-4">
               <Pantry
                 pantryThing={this.state.ingredients}
               />
+
             </div>
+        </div>
         )
+
      } else if(this.state.searched){
       return (
           <div>
