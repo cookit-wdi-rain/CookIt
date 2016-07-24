@@ -24,6 +24,7 @@ const ajaxAdapter = {
   },
 
 addPantry(item){
+    console.log(item)
     return fetch('/pantry',{
       method:'POST',
       headers:{

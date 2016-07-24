@@ -17,7 +17,7 @@ module.exports = {
     _db.any(
       `INSERT INTO
       pantry_items (ingredient_name)
-      VALUES ($/ingredient_name/)
+      VALUES ('cake')
       returning *;`, req.body
     )
     .then(pantry_items => {
@@ -26,7 +26,7 @@ module.exports = {
       next()
     })
     .catch(error =>{
-      console.error('Error in ADDING pantry_items', error)
+      console.error('Error in ADDING pantry_items', error, req.body)
     })
   },
 
