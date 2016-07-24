@@ -97,23 +97,30 @@ pantryItem(){
   render(){
       if(this.state.searched&&this.state.selected){
       return (
-          <div className="row Arlen">
+          <div className="row">
 
+            <div className="col-sm-4">
+              <Ingredients
+                recipes={this.state.results}
+               />
+            </div>
+
+            <div className="col-sm-4">
               <ResultsSelected
               recipes={this.state.results}
               onSelectRecipe={this.selectRecipe.bind(this)}
               dropdown={this.state.dropdown}
               />
-              <Ingredients
-                recipes={this.state.results}
-               />
+            </div>
+
+            <div className="col-sm-4">
               <Pantry
-
                 recipes={this.state.results}
                />
-
-          </div>
+            </div>
+        </div>
         )
+
      } else if(this.state.searched){
       return (
           <div>
