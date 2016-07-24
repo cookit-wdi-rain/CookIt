@@ -4,7 +4,7 @@ import Search           from './Search.jsx'
 import Results          from './Results.jsx'
 import ResultsSelected  from './ResultsSelected.jsx'
 import ajax             from '../helpers/ajaxAdapter.js'
-
+import Ingredients      from './Ingredients.jsx'
 
 export default class SearchContainer extends React.Component {
 
@@ -43,8 +43,8 @@ export default class SearchContainer extends React.Component {
   //console.log(this.state.query)
       console.log("Got back cuisine ", cuisine)
       this.setState({
-        // results: cuisine.results,
-        results:cuisine,
+        results: cuisine,
+        // results:cuisine,
         dropdown:this.state.dropdown,
         selected: false,
         query:"",
@@ -102,6 +102,9 @@ export default class SearchContainer extends React.Component {
               onSelectRecipe={this.selectRecipe.bind(this)}
               dropdown={this.state.dropdown}
               />
+              <Ingredients
+                recipes={this.state.results}
+               />
             </div>
           </div>
         )

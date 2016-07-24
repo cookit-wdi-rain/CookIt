@@ -5,8 +5,8 @@ const ajax      = require('../models/ajaxsearch')
 
 const sendJSONresp = (req,res)=>res.json(res.rows)
 
-test.route('/cuisine')
-  .get(ajax.cuisineCall, sendJSONresp)
+// test.route('/cuisine')
+//   .get(ajax.cuisineCall, sendJSONresp)
 
 test.route('/:main_id')
   .get(db.getIngredients, sendJSONresp)

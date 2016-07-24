@@ -8,20 +8,9 @@ export default class ResultsSelected extends React.Component {
           <div className="image_container" key>
             <h4>{this.props.recipes.title}</h4>
             <img className="recipe_image" src={this.props.recipes.image} />
-            <div>
+            <h4>Recipe:<a href={this.props.recipes.spoonacularSourceUrl}>{this.props.recipes.spoonacularSourceUrl}</a></h4>
+        </div>
 
-            {this.props.recipes.extendedIngredients
-            .map((item,i)=>{
-              return (
-                <div key={i}>
-                  <ul>
-                    <li>{item.name}</li>
-                  </ul>
-                </div>
-              )
-            })}
-            </div>
-          </div>
         </div>
       )
      }

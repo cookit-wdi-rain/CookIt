@@ -9,7 +9,7 @@ const myInit = {
 
 module.exports = {
 
-cuisineCall(req,res,next) {
+spoonacular(req,res,next) {
 request({
     url:'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine=italian',
     method:'get',
@@ -20,10 +20,10 @@ request({
   }
   ,(err,result,body)=>{
     if (err) throw err;
-    console.log('here')
-    res.json(body.result)
+    res.rows = result.body.results
+    console.log(res.rows)
+    next()
   })
-  next()
 }
 }
 
