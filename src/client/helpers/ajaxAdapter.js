@@ -3,9 +3,13 @@
 const ajaxAdapter = {
 
 cuisineCall(query) {
-  return fetch('/spoon')
-  .then(res => res.json() )
-  .then(console.log('worked'))
+  return fetch('/spoon',{
+    method: 'GET',
+    params: query
+  })
+  .then(res => {res.json()
+  console.log(res)} )
+  .then(console.log())
 },
 
 
