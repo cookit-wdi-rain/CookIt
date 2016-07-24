@@ -7,21 +7,12 @@ const myInit = {
 
 const ajaxAdapter = {
 
-// cuisineCall(query) {
-//   return fetch('/spoon',{
-//     header: {
-//       "Content-type": "application/json; charset=UTF-8"
-//     },
-//     //body : JSON.stringify(query)
-//       })
-//   .then(res => {res.json()
-//   console.log(res)} )
-//   .then(console.log())
-// },
-cuisineCall(query){
-  let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine='+ query.replace(/\s/,'%2C')+ '&number=12'
+
+cuisineCall(query) {
+  let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine='+ query + '&number=12'
   return fetch(url, myInit)
-  .then(res => res.json())
+  .then(res => res.json() )
+  .then(console.log('cuisine call worked'))
 },
 
 testCall() {
@@ -39,6 +30,7 @@ ingredientsCall(query) {
 testCall() {
  return fetch('/testapi')
  .then(res=>res.json())
+ .then(console.log(res))
 },
 
 
@@ -58,8 +50,8 @@ secondCall(query) {
 
 pantryCall() {
   return fetch('/pantry')
-  .then(res=>console.log(res))
   .then(res=>res.json())
+  .then(res=>console.log("Pantry Call ", res))
 }
 
 

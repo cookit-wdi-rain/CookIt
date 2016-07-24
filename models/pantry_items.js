@@ -5,6 +5,7 @@ module.exports = {
     _db.any(`SELECT ingredient_name FROM pantry_items;`)
        .then( pantry_items => {
         res.rows = pantry_items;
+        console.log(res.rows)
         next()
        })
        .catch( error => {
