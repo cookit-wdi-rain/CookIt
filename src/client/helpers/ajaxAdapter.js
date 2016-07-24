@@ -54,16 +54,12 @@ const ajaxAdapter = {
     let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/'+ query + '/information'
     return fetch(url, myInit)
     .then(res => res.json() )
+},
 
-<<<<<<< HEAD
-  },
-=======
 pantryCall() {
   return fetch('/pantry')
   .then(res => res.json() )
 },
->>>>>>> a32f6a8d2645848d45646dac61ffa1b6dba59a1d
-
 
   secondCall(query) {
     console.log(query)

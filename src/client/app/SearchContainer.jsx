@@ -13,7 +13,7 @@ export default class SearchContainer extends React.Component {
   constructor(){
     super();
     this.state = {
-      user: false,
+      user: true,
       dropdown:"cuisine",
       query: "",
       searched: false,
@@ -119,7 +119,7 @@ pantryItem(){
                 recipes={this.state.results}
                />
               <Pantry
-                pantryThing={this.state.ingredients.ingredient_name}
+                pantryThing={this.state.ingredients}
               />
             </div>
         )
