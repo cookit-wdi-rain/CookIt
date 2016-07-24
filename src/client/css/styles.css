@@ -52,7 +52,7 @@ h4 {
 }
 
 .ingredients {
-  width: 250px;
+  width: 300px;
   height: 100%;
   border: 3px solid red;
   margin-left: 10px;
@@ -60,16 +60,34 @@ h4 {
 
 }
 
-h3 {
-  text-align: center;
-}
-
 .pantry {
-  width: 250px;
+  width: 300px;
   height: 100%;
   border: 3px solid blue;
   margin-left: 10px;
   margin-top: -29%;
+}
+
+/******************************
+INDIVIDUAL RECIPE PAGE
+******************************/
+ul li {
+  list-style-type: none;
+}
+.ingredients h3 {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.ingredients-list{
+  padding: 0 5px;
+}
+.ingredients-list li{
+  text-align: left;
+  margin: 3px 0;
+}
+.smallLogo {
+  padding: 8px 0px 0px 15px;
 }
 
 
