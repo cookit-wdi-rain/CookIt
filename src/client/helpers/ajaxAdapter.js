@@ -23,6 +23,17 @@ const ajaxAdapter = {
     .then( r=> r.json() )
   },
 
+addPantry(item){
+    return fetch('/pantry',{
+      method:'POST',
+      headers:{
+        "Content-type": "application/json; charset=UTF-8"
+      },
+      body: JSON.stringify(item)
+    })
+    .then( r=> console.log(r) )
+  },
+
 
   cuisineCall(query) {
     let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine='+ query + '&number=12'
@@ -31,10 +42,7 @@ const ajaxAdapter = {
     .then(console.log('cuisine call worked'))
   },
 
-  testCall() {
-    return fetch('/testapi')
-    .then(res=>res.json())
-  },
+
 
   ingredientsCall(query) {
     let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?ingredients='+ query.replace(/\s/,'%2C')+ '&number=12'
@@ -43,11 +51,7 @@ const ajaxAdapter = {
 
   },
 
-  testCall() {
-   return fetch('/testapi')
-   .then(res=>res.json())
-   .then(console.log(res))
-  },
+
 
 
   recipeCall(query) {
@@ -56,22 +60,13 @@ const ajaxAdapter = {
     .then(res => res.json() )
 },
 
-pantryCall() {
-  return fetch('/pantry')
-  .then(res => res.json() )
-},
 
-  secondCall(query) {
-    console.log(query)
-    return fetch(`/testapi/${query}`)
-    .then(res=>res.json())
-  },
+
 
   pantryCall() {
     return fetch('/pantry')
     .then(res=>res.json())
-    .then(res=>console.log("Pantry Call ", res))
-  }
+    }
 
 
 
