@@ -32,7 +32,7 @@ addPantry(item){
       },
       body: JSON.stringify(item)
     })
-    .then( r=> console.log(r) )
+    .then( r=> r.json() )
   },
 
 
