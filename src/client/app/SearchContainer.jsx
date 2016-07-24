@@ -115,7 +115,7 @@ pantryItem(){
                 recipes={this.state.results}
                />
               <Pantry
-                pantryItems={this.state.ingredients}
+                pantryItem={this.state.ingredients}
               />
             </div>
           </div>

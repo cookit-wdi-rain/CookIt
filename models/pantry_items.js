@@ -14,9 +14,9 @@ const _db = pg(config);
 module.exports = {
   getPantryItems(req,res,next) {
     _db.any(`SELECT ingredient_name FROM pantry_items;`)
-       .then( pantry_items => {
-        res.rows = pantry_items;
-        console.log(res.rows)
+       .then( pantry_item => {
+        res.rows = pantry_item;
+        console.log(pantry_item)
         next()
        })
        .catch( error => {
