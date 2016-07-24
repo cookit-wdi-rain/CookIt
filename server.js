@@ -9,8 +9,10 @@ const morgan      = require('morgan')
 const path        = require('path')
 const bodyParser  = require('body-parser')
 const app         = express()
-// const userRoute   = require('./routes/user_route')
+const userRoute   = require('./routes/users')
+const userRoute   = require('./routes/users')
 const pantryRoute = require('./routes/pantry_route')
+const apiRoute    = require('./routes/api')
 // const recipeRoute = require('./routes/recipe_route')
 const spoon       = require('./routes/spoonacular')
 //Dummy SQL database for API replacement during testing
@@ -26,13 +28,14 @@ app.use(express.static(path.join(__dirname,'dist')))
 
 app.use(bodyParser.json());
 
-// app.use('/users', userRoute)
+app.use('/', userRoute)
 
+app.use('/api', apiRoute)
 // app.use('/recipes', recipeRoute)
 
 app.use('/pantry', pantryRoute)
 
-app.use('/spoon', spoon)
+//app.use('/spoon', spoon)
 
 //Dummy SQL database for API replacement during testing
 // app.use('/testapi', testRoute)

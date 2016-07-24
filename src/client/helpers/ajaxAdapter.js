@@ -1,17 +1,28 @@
-
+const myInit = {
+ method: 'GET',
+ headers: {
+   "X-Mashape-Key": "9nRKaBF7ulmshtZuHpCkDn8KSmPGp19tV5Djsn4isweJZ0ax0S"
+}
+}
 
 const ajaxAdapter = {
 
-cuisineCall(query) {
-  return fetch('/spoon',{
-    method: 'GET',
-    params: query
-  })
-  .then(res => {res.json()
-  console.log(res)} )
-  .then(console.log())
+// cuisineCall(query) {
+//   return fetch('/spoon',{
+//     header: {
+//       "Content-type": "application/json; charset=UTF-8"
+//     },
+//     //body : JSON.stringify(query)
+//       })
+//   .then(res => {res.json()
+//   console.log(res)} )
+//   .then(console.log())
+// },
+cuisineCall(query){
+  let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine='+ query.replace(/\s/,'%2C')+ '&number=12'
+  return fetch(url, myInit)
+  .then(res => res.json())
 },
-
 
 testCall() {
   return fetch('/testapi')

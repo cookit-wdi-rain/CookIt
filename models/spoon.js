@@ -11,7 +11,7 @@ module.exports = {
 
 spoonacular(req,res,next) {
 request({
-    url:'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine=',
+    url:'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine='+req.body.cuisine,
     method:'get',
     headers: {
       "X-Mashape-Key": apikey

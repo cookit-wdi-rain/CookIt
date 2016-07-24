@@ -44,7 +44,7 @@ export default class SearchContainer extends React.Component {
   //console.log(this.state.query)
       console.log("Got back cuisine ", cuisine)
       this.setState({
-        results: cuisine,
+        results: cuisine.results,
         // results:cuisine,
         dropdown:this.state.dropdown,
         selected: false,
