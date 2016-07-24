@@ -18,10 +18,8 @@ export default class Ingredients extends React.Component {
                 return (
 
                   // <div key={i}>
-                      <li><button className="list-group-item"
-                      //name={newIngredient}
-                      key={i}
-                      type='hidden'
+                      <li key={i}><button className="list-group-item"
+
                       value={item.name}
                       onClick={this.props.addToPantry}>
                       {item.name}</button></li>

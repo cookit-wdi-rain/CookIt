@@ -49,10 +49,10 @@ module.exports = {
   },
 
   deletePantryItem(req,res,next) {
-    const iID = Number.parseInt(req.params.item_id)
+    //const iID = Number.parseInt(req.params.item_id)
     _db.none(
       `DELETE FROM pantry_items
-      WHERE items_id = $1;`, [iID]
+      WHERE ingredient_name = $1;`, [req.body.item]
     )
     .then(() => {
       console.log('Deleted pantry_items successfully');
