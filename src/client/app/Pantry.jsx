@@ -7,6 +7,7 @@ export default class Pantry extends React.Component {
     return (
       <div className="pantry">
         <h3>Pantry Items</h3>
+
           <div>
             <ul className="pantry-list">
               {this.props.recipes.extendedIngredients
@@ -24,3 +25,4 @@ export default class Pantry extends React.Component {
     )
   }
 }
+
