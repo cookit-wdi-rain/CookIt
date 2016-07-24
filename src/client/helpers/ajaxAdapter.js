@@ -38,6 +38,9 @@ addPantry(item){
 deletePantry(item){
     return fetch('/pantry',{
       method:'DELETE',
+      headers:{
+        "Content-type": "application/json; charset=UTF-8"
+      },
       body: JSON.stringify(item)
     })
     .then( r=> console.log(r) )
