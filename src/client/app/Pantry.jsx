@@ -5,17 +5,22 @@ export default class Pantry extends React.Component {
 
   render(){
     return (
-
       <div className="pantry">
         <h3>Pantry Items</h3>
-          {this.props.pantryItems.map((recipe,i)=>{
-            return(
-              <div className="image_container" key={i}>
-                <h4>{recipe.ingredient_name}</h4>
-              </div>
-            )
-          })
-          }
+
+          <div>
+            <ul className="pantry-list">
+              {this.props.recipes.extendedIngredients
+              .map((item,i)=>{
+                return (
+
+                  // <div key={i}>
+                      <li><button className="list-group-item" key={i}>{item.name}</button></li>
+                  // </div>
+                )
+              })}
+            </ul>
+          </div>
       </div>
     )
   }

@@ -97,15 +97,8 @@ pantryItem(){
   render(){
       if(this.state.searched&&this.state.selected){
       return (
-          <div>
-            <div>
-              <Search
-              onUpdateSearch={this.handleUpdateSearch.bind(this)}
-              onUpdateDrop={this.handleUpdateDrop.bind(this)}
-              onSubmitSearch={this.handleSubmitSearch.bind(this)}
-              query={this.state.query} />
-            </div>
-            <div>
+          <div className="row Arlen">
+
               <ResultsSelected
               recipes={this.state.results}
               onSelectRecipe={this.selectRecipe.bind(this)}
@@ -115,20 +108,16 @@ pantryItem(){
                 recipes={this.state.results}
                />
               <Pantry
-                pantryItems={this.state.ingredients}
-              />
-            </div>
+
+                recipes={this.state.results}
+               />
+
           </div>
         )
      } else if(this.state.searched){
       return (
           <div>
             <div>
-              <Search
-              onUpdateSearch={this.handleUpdateSearch.bind(this)}
-              onUpdateDrop={this.handleUpdateDrop.bind(this)}
-              onSubmitSearch={this.handleSubmitSearch.bind(this)}
-              query={this.state.query} />
             </div>
             <div>
               <Results
