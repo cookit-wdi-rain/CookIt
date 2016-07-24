@@ -6,7 +6,7 @@ export default class SmallLogo extends React.Component {
 
     return (
       <div className="smallHeader">
-        <img className="smallLogo" src="../images/cookit-small.png"/>
+        <a href="/"><img className="smallLogo" src="../images/cookit-small.png"/></a>
       </div>
     )
   }

@@ -9,6 +9,8 @@ import Ingredients      from './Ingredients.jsx'
 import Pantry           from './Pantry.jsx'
 import Login            from './Login.jsx'
 import CreateUser       from './CreateUser.jsx'
+import SmallLogo        from './SmallLogo.jsx'
+import Header           from './Header.jsx'
 
 export default class SearchContainer extends React.Component {
 
@@ -121,8 +123,9 @@ addToPantry(event){
       return (
 
           <div className="row">
-
+            <SmallLogo />
             <div className="col-sm-4">
+
               <Ingredients
                 addToPantry={this.addToPantry.bind(this)}
                 recipes={this.state.results}
@@ -149,6 +152,7 @@ addToPantry(event){
      } else if(this.state.searched){
       return (
           <div>
+          <SmallLogo />
             <div>
             </div>
             <div>
@@ -163,6 +167,7 @@ addToPantry(event){
       } else {
       return(
         <div>
+          <Header />
           <Search
           onUpdateSearch={this.handleUpdateSearch.bind(this)}
           onUpdateDrop={this.handleUpdateDrop.bind(this)}
