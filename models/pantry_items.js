@@ -14,10 +14,10 @@ module.exports = {
   },
   addPantryItem(req,res,next) {
     console.log('=====', req.body)
-    _db.any(
+    _db.one(
       `INSERT INTO
       pantry_items (ingredient_name)
-      VALUES ($/newIngredient/)
+      VALUES ($/item/)
       returning *;`, req.body
     )
     .then(pantry_items => {
