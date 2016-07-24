@@ -83,11 +83,12 @@ export default class SearchContainer extends React.Component {
 addToPantry(event){
   event.preventDefault();
   let item = {item:event.target.value}
-  ajax.addPantry(item)
+  ajax.addPantry(item).then(pantry=>{
 
   ajax.pantryCall().then(pantry=>{
       this.setState({ pantry: pantry })
-    })
+
+    })})
   }
 
 
