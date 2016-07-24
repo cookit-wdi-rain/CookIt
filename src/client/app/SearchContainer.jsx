@@ -42,9 +42,8 @@ export default class SearchContainer extends React.Component {
     ajax.cuisineCall(this.state.query).then( cuisine =>{
   // ajax.testCall(this.state.query).then( cuisine =>{
   //console.log(this.state.query)
-      console.log("Got back cuisine ", cuisine)
       this.setState({
-        results: cuisine,
+        results: cuisine.results,
         // results:cuisine,
         dropdown:this.state.dropdown,
         selected: false,
@@ -69,9 +68,9 @@ export default class SearchContainer extends React.Component {
   }
 }
 
-pantryItem(event){
+pantryItem(){
   ajax.pantryCall().then( pantryItem => {
-  console.log(pantryItem)
+  console.log("pantry Item ", pantryItem)
     this.setState({
       ingredients: pantryItem
     })
@@ -116,7 +115,7 @@ pantryItem(event){
                 recipes={this.state.results}
                />
               <Pantry
-              pantryItems={this.state.ingredients}
+                pantryItems={this.state.ingredients}
               />
             </div>
           </div>

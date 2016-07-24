@@ -1,6 +1,6 @@
 const express   = require('express');
 const spoon     = express.Router()
-const db        = require('../models/ajaxsearch')
+const db        = require('../models/spoon')
 
 const sendJSONresp = (req,res)=>res.json(res.rows)
 

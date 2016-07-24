@@ -21,7 +21,7 @@ request({
   ,(err,result,body)=>{
     if (err) throw err;
     res.rows = result.body.results
-    console.log(res.rows)
+    console.log("the cuisine results: ", res.rows)
     next()
   })
 }
