@@ -97,7 +97,7 @@ pantryItem(){
   render(){
       if(this.state.searched&&this.state.selected){
       return (
-          <div className="row Arlen">
+          <div className="row">
 
               <ResultsSelected
               recipes={this.state.results}
@@ -108,11 +108,9 @@ pantryItem(){
                 recipes={this.state.results}
                />
               <Pantry
-
-                recipes={this.state.results}
-               />
-
-          </div>
+                pantryThing={this.state.ingredients.ingredient_name}
+              />
+            </div>
         )
      } else if(this.state.searched){
       return (
