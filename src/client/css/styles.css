@@ -72,9 +72,13 @@ h4 {
 .pantry {
   width: 300px;
   height: 100%;
+<<<<<<< HEAD
   /*border: 3px solid blue;*/
   margin-right: 10px;
 
+=======
+  border: 3px solid blue;
+>>>>>>> a32f6a8d2645848d45646dac61ffa1b6dba59a1d
 }
 
 /******************************

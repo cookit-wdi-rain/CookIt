@@ -50,9 +50,8 @@ secondCall(query) {
 
 pantryCall() {
   return fetch('/pantry')
-  .then(res=>res.json())
-  .then(res=>console.log("Pantry Call ", res))
-}
+  .then(res => res.json() )
+},
 
 
 
