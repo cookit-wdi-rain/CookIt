@@ -5,6 +5,7 @@ import Results          from './Results.jsx'
 import ResultsSelected  from './ResultsSelected.jsx'
 import ajax             from '../helpers/ajaxAdapter.js'
 import Ingredients      from './Ingredients.jsx'
+import Pantry           from './Pantry.jsx'
 
 export default class SearchContainer extends React.Component {
 
@@ -59,13 +60,22 @@ export default class SearchContainer extends React.Component {
   console.log("ingredients",ingredient)
     this.setState({
       results: ingredient,
-      dropdown:this.state.dropdown,
-      query:"",
+      dropdown: this.state.dropdown,
+      query: "",
       searched: true
 
     })
   })
   }
+}
+
+pantryItem(event){
+  ajax.pantryCall().then( pantryItem => {
+  console.log(pantryItem)
+    this.setState({
+      ingredients: pantryItem
+    })
+  })
 }
 
  selectRecipe(event){
@@ -105,6 +115,9 @@ export default class SearchContainer extends React.Component {
               <Ingredients
                 recipes={this.state.results}
                />
+              <Pantry
+              pantryItems={this.state.ingredients}
+              />
             </div>
           </div>
         )
