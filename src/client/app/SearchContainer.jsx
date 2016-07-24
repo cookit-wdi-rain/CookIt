@@ -5,6 +5,7 @@ import Results          from './Results.jsx'
 import ResultsSelected  from './ResultsSelected.jsx'
 import ajax             from '../helpers/ajaxAdapter.js'
 import Ingredients      from './Ingredients.jsx'
+import Pantry           from './Pantry.jsx'
 
 export default class SearchContainer extends React.Component {
 
@@ -88,15 +89,8 @@ export default class SearchContainer extends React.Component {
   render(){
       if(this.state.searched&&this.state.selected){
       return (
-          <div>
-            <div>
-              <Search
-              onUpdateSearch={this.handleUpdateSearch.bind(this)}
-              onUpdateDrop={this.handleUpdateDrop.bind(this)}
-              onSubmitSearch={this.handleSubmitSearch.bind(this)}
-              query={this.state.query} />
-            </div>
-            <div>
+          <div className="row Arlen">
+
               <ResultsSelected
               recipes={this.state.results}
               onSelectRecipe={this.selectRecipe.bind(this)}
@@ -105,18 +99,16 @@ export default class SearchContainer extends React.Component {
               <Ingredients
                 recipes={this.state.results}
                />
-            </div>
+              <Pantry
+                recipes={this.state.results}
+               />
+
           </div>
         )
      } else if(this.state.searched){
       return (
           <div>
             <div>
-              <Search
-              onUpdateSearch={this.handleUpdateSearch.bind(this)}
-              onUpdateDrop={this.handleUpdateDrop.bind(this)}
-              onSubmitSearch={this.handleSubmitSearch.bind(this)}
-              query={this.state.query} />
             </div>
             <div>
               <Results
@@ -130,7 +122,6 @@ export default class SearchContainer extends React.Component {
       } else {
       return(
         <Search
-
         onUpdateSearch={this.handleUpdateSearch.bind(this)}
         onUpdateDrop={this.handleUpdateDrop.bind(this)}
         onSubmitSearch={this.handleSubmitSearch.bind(this)}

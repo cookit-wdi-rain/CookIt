@@ -5,6 +5,7 @@
 
 .recipe_results {
   text-align: center;
+  padding-top: 50px;
 }
 
 h4 {
@@ -19,6 +20,11 @@ h4 {
 .image_container {
   display: inline-block;
   width: 30%;
+}
+
+.image_container h3 {
+  font-size: 28px;
+  padding-bottom: 20px;
 }
 
 .header {
@@ -64,8 +70,8 @@ h4 {
   width: 300px;
   height: 100%;
   border: 3px solid blue;
-  margin-left: 10px;
-  margin-top: -29%;
+  margin-right: 10px;
+  margin-top: -66%;
 }
 
 /******************************
@@ -89,5 +95,19 @@ ul li {
 .smallLogo {
   padding: 8px 0px 0px 15px;
 }
+
+.pantry h3 {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.pantry-list{
+  padding: 0 5px;
+}
+.pantry-list li{
+  text-align: left;
+  margin: 3px 0;
+}
+
 
 
