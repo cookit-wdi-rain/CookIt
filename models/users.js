@@ -36,7 +36,7 @@ module.exports = {
         }else{
           res.error = true
         }
-        console.log(res.user)
+        console.log('the user'+res.user)
         next()
 
       })
