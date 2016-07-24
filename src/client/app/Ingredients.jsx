@@ -2,6 +2,10 @@ import React      from 'react'
 
 
 export default class Ingredients extends React.Component {
+  storeInPantry(event){
+    event.preventDefault();
+
+  }
 
   render(){
     return (
@@ -14,7 +18,7 @@ export default class Ingredients extends React.Component {
                 return (
 
                   // <div key={i}>
-                      <li><button className="list-group-item" key={i}>{item.name}</button></li>
+                      <li><button className="list-group-item" key={i} value={item.name}>{item.name}</button></li>
                   // </div>
                 )
               })}

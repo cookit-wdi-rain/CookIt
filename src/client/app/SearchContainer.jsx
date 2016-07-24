@@ -20,8 +20,17 @@ export default class SearchContainer extends React.Component {
       searched: false,
       results: [],
       ingredients: [],
+      pantry: {},
       selected: false
     }
+  }
+
+   componentDidMount(){
+    // go to the db and get all the tasks
+    ajax.pantryCall().then( data=>
+      // when the data comes back, update the state
+      this.setState({pantry: data })
+    )
   }
 
   handleUpdateDrop(event){
@@ -71,14 +80,14 @@ export default class SearchContainer extends React.Component {
   }
 }
 
-pantryItem(){
-  ajax.pantryCall().then( pantryItem => {
-  console.log("pantry Item ", pantryItem)
-    this.setState({
-      ingredients: pantryItem
-    })
-  })
-}
+// pantryItem(){
+//   ajax.pantryCall().then( pantryItem => {
+//   console.log("pantry Item ", pantryItem)
+//     this.setState({
+//       pantry: pantryItem
+//     })
+//   })
+// }
 
  selectRecipe(event){
     event.preventDefault();
@@ -88,7 +97,7 @@ pantryItem(){
     .then( cuisine =>{
       this.setState({
         results: cuisine,
-        //ingredients: cuisine.ingredients.split(", "),
+        // ingredients: "poop",
         query: "",
         selected: true
       })
@@ -98,17 +107,16 @@ pantryItem(){
 
 
   render(){
-      if(!this.state.user){
-        return(
-          <div>
-            <Login />
-            <CreateUser />
-          </div>
-          )
+      // if(!this.state.user){
+      //   return(
 
-      } else
+      //     )
+
+
+      // } else
       if(this.state.searched&&this.state.selected){
       return (
+
           <div className="row">
 
             <div className="col-sm-4">
@@ -127,7 +135,7 @@ pantryItem(){
 
             <div className="col-sm-4">
               <Pantry
-                pantryThing={this.state.ingredients}
+                pantryThing={this.state.pantry}
               />
 
             </div>
@@ -150,12 +158,14 @@ pantryItem(){
         )
       } else {
       return(
-        <Search
-        onUpdateSearch={this.handleUpdateSearch.bind(this)}
-        onUpdateDrop={this.handleUpdateDrop.bind(this)}
-        onSubmitSearch={this.handleSubmitSearch.bind(this)}
-        query={this.state.query}
-        />
+        <div>
+          <Search
+          onUpdateSearch={this.handleUpdateSearch.bind(this)}
+          onUpdateDrop={this.handleUpdateDrop.bind(this)}
+          onSubmitSearch={this.handleSubmitSearch.bind(this)}
+          query={this.state.query}
+          />
+          </div>
       )
     }
   }

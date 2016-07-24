@@ -1,9 +1,12 @@
 const express   = require('express');
 const pantry    = express.Router()
 const db        = require('../models/pantry_items')
+const tokenService    = require('../service/tokenService')
 
 
 const sendJSONresp = (req,res)=>res.json(res.rows)
+
+// pantry.use( tokenService.validateToken)
 
 pantry.route('/:item_id')
   .put(db.updatePantryItem, sendJSONresp)
