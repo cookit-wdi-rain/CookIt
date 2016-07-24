@@ -8,12 +8,13 @@ import Ingredients      from './Ingredients.jsx'
 import Pantry           from './Pantry.jsx'
 import Login            from './Login.jsx'
 import CreateUser       from './CreateUser.jsx'
+
 export default class SearchContainer extends React.Component {
 
   constructor(){
     super();
     this.state = {
-      user: true,
+      user: false,
       dropdown:"cuisine",
       query: "",
       searched: false,

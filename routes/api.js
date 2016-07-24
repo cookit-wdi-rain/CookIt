@@ -9,13 +9,12 @@ const sendError    = (err,req,res,next)=>res.status(401).json(err)
 
 
 api.route('/authenticate')
-     .post(db.createUser,
-              db.getUserByUsername,
+     .post(   db.getUserByUsername,
               tokenService.createToken,
               sendError)
 
 api.get('/', (req, res)=>
-  res.json({ message: 'Welcome to the coolest API on earth!' })
+  res.json({ message: 'Welcome to the lamest API on earth!' })
 )
 
 
