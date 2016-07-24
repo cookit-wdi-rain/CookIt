@@ -4,6 +4,7 @@ import Search           from './Search.jsx'
 import Results          from './Results.jsx'
 import ResultsSelected  from './ResultsSelected.jsx'
 import ajax             from '../helpers/ajaxAdapter.js'
+import util             from '../helpers/util.js'
 import Ingredients      from './Ingredients.jsx'
 import Pantry           from './Pantry.jsx'
 import Login            from './Login.jsx'
@@ -14,7 +15,6 @@ export default class SearchContainer extends React.Component {
   constructor(){
     super();
     this.state = {
-      user: false,
       dropdown:"cuisine",
       query: "",
       searched: false,
@@ -27,10 +27,10 @@ export default class SearchContainer extends React.Component {
 
    componentDidMount(){
     // go to the db and get all the tasks
-    ajax.pantryCall().then( data=>
+    ajax.pantryCall().then(pantry=>{
       // when the data comes back, update the state
-      this.setState({pantry: data })
-    )
+      this.setState({ pantry: pantry })
+    })
   }
 
   handleUpdateDrop(event){
@@ -80,14 +80,15 @@ export default class SearchContainer extends React.Component {
   }
 }
 
-// pantryItem(){
-//   ajax.pantryCall().then( pantryItem => {
-//   console.log("pantry Item ", pantryItem)
-//     this.setState({
-//       pantry: pantryItem
-//     })
-//   })
-// }
+addToPantry(event){
+  event.preventDefault();
+  console.log(event.target.value)
+  ajax.addPantry("poop").then( data=>{
+
+        this.setState({pantry: data})
+      })
+  }
+
 
  selectRecipe(event){
     event.preventDefault();
@@ -121,6 +122,7 @@ export default class SearchContainer extends React.Component {
 
             <div className="col-sm-4">
               <Ingredients
+                addToPantry={this.addToPantry.bind(this)}
                 recipes={this.state.results}
                />
             </div>
@@ -135,7 +137,7 @@ export default class SearchContainer extends React.Component {
 
             <div className="col-sm-4">
               <Pantry
-                pantryThing={this.state.pantry}
+                pantry={this.state.pantry}
               />
 
             </div>
