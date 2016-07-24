@@ -24,7 +24,7 @@ module.exports = {
   },
   getIngredients(req,res,next) {
     const rID = Number.parseInt(req.params.main_id)
-    _db.one(`SELECT *  FROM recipe
+    _db.one(`SELECT * FROM recipe
             JOIN cuisine
             ON recipe.recipe_id=cuisine.cuisine_id
             WHERE cuisine.main_id=$1`, [rID])

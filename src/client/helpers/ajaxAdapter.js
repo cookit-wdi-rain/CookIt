@@ -24,6 +24,7 @@ const ajaxAdapter = {
   },
 
 addPantry(item){
+    console.log(item)
     return fetch('/pantry',{
       method:'POST',
       headers:{
@@ -31,7 +32,7 @@ addPantry(item){
       },
       body: JSON.stringify(item)
     })
-    .then( r=> console.log(r) )
+    .then( r=> r.json() )
   },
 
 
