@@ -9,6 +9,8 @@ import Ingredients      from './Ingredients.jsx'
 import Pantry           from './Pantry.jsx'
 import Login            from './Login.jsx'
 import CreateUser       from './CreateUser.jsx'
+import SmallLogo        from './SmallLogo.jsx'
+import Header           from './Header.jsx'
 
 export default class SearchContainer extends React.Component {
 
@@ -82,12 +84,24 @@ export default class SearchContainer extends React.Component {
 
 addToPantry(event){
   event.preventDefault();
-  console.log(event.target.value)
-  ajax.addPantry("poop").then( data=>{
+  let item = {item:event.target.value}
+  ajax.addPantry(item).then(pantry=>{
 
-        this.setState({pantry: data})
-      })
+  ajax.pantryCall().then(pantry=>{
+      this.setState({ pantry: pantry })
+
+    })})
   }
+
+deleteFromPantry(event){
+  event.preventDefault();
+  let item = {item: event.target.value}
+  ajax.deletePantry(item).then(pantry=>{
+    ajax.pantryCall().then(pantry=>{
+      this.setState({pantry: pantry})
+    })
+  })
+}
 
 
  selectRecipe(event){
@@ -98,7 +112,6 @@ addToPantry(event){
     .then( cuisine =>{
       this.setState({
         results: cuisine,
-        // ingredients: "poop",
         query: "",
         selected: true
       })
@@ -119,8 +132,9 @@ addToPantry(event){
       return (
 
           <div className="row">
-
+            <SmallLogo />
             <div className="col-sm-4">
+
               <Ingredients
                 addToPantry={this.addToPantry.bind(this)}
                 recipes={this.state.results}
@@ -137,6 +151,7 @@ addToPantry(event){
 
             <div className="col-sm-4">
               <Pantry
+                deletePantry={this.deleteFromPantry.bind(this)}
                 pantry={this.state.pantry}
               />
 
@@ -147,6 +162,7 @@ addToPantry(event){
      } else if(this.state.searched){
       return (
           <div>
+          <SmallLogo />
             <div>
             </div>
             <div>
@@ -161,6 +177,7 @@ addToPantry(event){
       } else {
       return(
         <div>
+          <Header />
           <Search
           onUpdateSearch={this.handleUpdateSearch.bind(this)}
           onUpdateDrop={this.handleUpdateDrop.bind(this)}

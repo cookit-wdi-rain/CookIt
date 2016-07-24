@@ -8,13 +8,13 @@ const sendJSONresp = (req,res)=>res.json(res.rows)
 
 // pantry.use( tokenService.validateToken)
 
-pantry.route('/:item_id')
+pantry.route('/')
   .put(db.updatePantryItem, sendJSONresp)
   .delete(db.deletePantryItem, ( req,res ) => res.send( req.params.items_id ))
 
 pantry.route('/')
   .get(db.getPantryItems, sendJSONresp)
-  .post(db.addPantryItem, sendJSONresp)
+  .post(db.addPantryItem, (req,res) => res.status(201).json({data: 'success'}).end())
 
 
 
