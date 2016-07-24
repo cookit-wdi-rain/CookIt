@@ -69,8 +69,6 @@ addPantry(item){
     .then(res=>res.json())
     }
 
-
-
 }
 
 
