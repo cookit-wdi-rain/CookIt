@@ -12,7 +12,7 @@ const app         = express()
 // const userRoute   = require('./routes/user_route')
 const pantryRoute = require('./routes/pantry_route')
 // const recipeRoute = require('./routes/recipe_route')
-
+const spoon       = require('./routes/spoonacular')
 //Dummy SQL database for API replacement during testing
 
 // const testRoute   = require('./routes/testData')
@@ -32,8 +32,11 @@ app.use(bodyParser.json());
 
 app.use('/pantry', pantryRoute)
 
+app.use('/spoon', spoon)
+
 //Dummy SQL database for API replacement during testing
 // app.use('/testapi', testRoute)
+
 
 app.listen(port, ()=>{
   console.log('Server maxin\' and relaxin\' at ', port)

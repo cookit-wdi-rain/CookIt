@@ -1,34 +1,31 @@
-
-const pg = require('pg-promise')({})
-
-
-const config = {
-apikey:       process.env.COOKAPI,
-};
+'use strict'
+const request = require('request')
+const apikey= process.env.COOKAPI;
+const myInit = {
+  method: 'GET',
+  headers: {
+    "X-Mashape-Key": apikey }
+}
 
 module.exports = {
-   searchCuisine(req,res,next) {
-    console.log('req.body = ', req.body);
-    // let title = req.body.title;
-    // let queryParams = { t: title, r: 'json' };
-    let api_url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine='
 
-    console.log("queryParams = ", queryParams);
-    request({
-        url: api_url, //URL to hit
-        // qs: queryParams, //Query string data
-        method: 'GET', //Specify the method
-        json: true
-    }, function(error, response, data){
-        if(error) {
-          console.log(error);
-          throw error;
-        } else {
-          console.log(response.statusCode, data);
-          console.log("backend data = ", data);
-          res.rows = data;
-          next();
-        }
-    });
-  },
+spoonacular(req,res,next) {
+request({
+    url:'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine=',
+    method:'get',
+    headers: {
+      "X-Mashape-Key": apikey
+    },
+    json:true
+  }
+  ,(err,result,body)=>{
+    if (err) throw err;
+    res.rows = result.body.results
+    console.log(res.rows)
+    next()
+  })
 }
+}
+
+
+

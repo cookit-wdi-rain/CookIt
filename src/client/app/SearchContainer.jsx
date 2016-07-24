@@ -44,7 +44,7 @@ export default class SearchContainer extends React.Component {
   //console.log(this.state.query)
       console.log("Got back cuisine ", cuisine)
       this.setState({
-        results: cuisine.results,
+        results: cuisine,
         // results:cuisine,
         dropdown:this.state.dropdown,
         selected: false,
@@ -143,7 +143,6 @@ pantryItem(event){
       } else {
       return(
         <Search
-
         onUpdateSearch={this.handleUpdateSearch.bind(this)}
         onUpdateDrop={this.handleUpdateDrop.bind(this)}
         onSubmitSearch={this.handleSubmitSearch.bind(this)}
