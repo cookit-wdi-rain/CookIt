@@ -1,0 +1,115 @@
+
+* {
+  margin: 0 auto;
+}
+
+.recipe_results {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.result_container {
+  width: 100%;
+}
+
+h4 {
+  clear:left;
+}
+
+.recipe_image {
+  height: 275px;
+  width: 275px;
+  border: 2px solid black;
+}
+.image_container {
+  display: inline-block;
+  width: 30%;
+}
+
+.image_container h3 {
+  font-size: 28px;
+  padding-bottom: 20px;
+}
+
+.header {
+  text-align: center;
+}
+.jumbotron{
+  background: none;
+}
+.input-group{
+  background-color: #eeeeee;
+  width: 50%;
+  border: 0;
+  height: 30px;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 14px auto;
+}
+.input-group:focus{
+  border: 0;
+  outline:0;
+}
+
+.headerLogo {
+  height: 100px;
+  width: 100px;
+}
+
+.headerName {
+  text-align: center;
+  color: #ffffff;
+}
+
+.ingredients {
+  width: 300px;
+  height: 100%;
+  /*border: 3px solid red;*/
+  margin-left: 10px;
+
+}
+
+.pantry {
+  width: 300px;
+  height: 100%;
+  /*border: 3px solid blue;*/
+  margin-right: 10px;
+}
+
+/******************************
+INDIVIDUAL RECIPE PAGE
+******************************/
+ul li {
+  list-style-type: none;
+}
+.ingredients h3 {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.ingredients-list{
+  padding: 0 5px;
+}
+.ingredients-list li{
+  text-align: left;
+  margin: 3px 0;
+}
+.smallLogo {
+  padding: 8px 0px 0px 15px;
+}
+
+.pantry h3 {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.pantry-list{
+  padding: 0 5px;
+}
+.pantry-list li{
+  text-align: left;
+  margin: 3px 0;
+}
+
+
+
