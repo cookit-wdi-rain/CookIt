@@ -15,7 +15,7 @@ module.exports = {
   listUsers(req,res,next) {
     _db.any(`SELECT * FROM users;`)
        .then( users => {
-        res.rows = users;
+        res.users = users;
         next()
        })
        .catch( error => {
@@ -52,7 +52,7 @@ module.exports = {
     createSecure(req.body.password)
      .then( hash=>{
         _db.one(`
-          INSERT INTO users (first_name, email, password_digest)
+          INSERT INTO users (name, email, password_digest)
           VALUES ($1, $2, $3)
           returning *;`,[req.body.name, req.body.email, hash]
         )
@@ -66,10 +66,10 @@ module.exports = {
           next()
         })
 
-      });
-  },
 
-
+  })
+}
+}
 
 
 

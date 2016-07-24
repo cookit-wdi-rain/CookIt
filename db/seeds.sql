@@ -1,4 +1,4 @@
-insert into users (first_name, email, password_digest)
+insert into users (name, email, password_digest)
  VALUES
   ('test', 'test', 'test'),
   ( 'Chandler', 'cbasso@gmail.com', 'ptest1'),

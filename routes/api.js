@@ -1,7 +1,7 @@
-const express  = require('express');
-const api    = express.Router()
-const db       = require('../models/users')
-const token    = require('../service/tokenService')
+const express         = require('express');
+const api             = express.Router()
+const db              = require('../models/users')
+const tokenService    = require('../service/tokenService')
 
 const sendJSONresp = (req,res)=>res.json(res.rows)
 const sendError    = (err,req,res,next)=>res.status(401).json(err)
@@ -10,7 +10,7 @@ const sendError    = (err,req,res,next)=>res.status(401).json(err)
 
 api.route('/authenticate')
      .post(db.createUser,
-              userService.getUserByUsername,
+              db.getUserByUsername,
               tokenService.createToken,
               sendError)
 
