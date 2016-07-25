@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # CookIt
 
 ##Summary 
@@ -81,11 +80,17 @@ API's <br>
 ## Sources
 
 1. Link to wireframe: http://imgur.com/a/aWzBT
+2. Referenced to return the value in a dropdown: http://stackoverflow.com/questions/28678466/how-to-get-select-elements-value-in-react-bootstrap
+
+3. Referenced for dropdown: https://github.com/fraserxu/react-dropdown/blob/master/example/main.js
+
+4. Referenced when distinguishing multiple inputs: http://stackoverflow.com/questions/21029999/react-js-identifying-different-inputs-with-one-onchange-handler
 
 
 ## Hurdles
 
 1. Finding a free and information rich API
-=======
-#CookIt
->>>>>>> 70fde8eda75d2c7412a70e2eae336acb7330693b
+2. Moving all the ajax calls to the API on the backend
+3. Making the User Authentication tokens work correctly
+4. Using the fetch calls to send and receive user submissions
+
