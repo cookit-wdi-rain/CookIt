@@ -1,3 +1,6 @@
+
+
+
 # CookIt
 
 ##Summary 
@@ -93,4 +96,6 @@ API's <br>
 2. Moving all the ajax calls to the API on the backend
 3. Making the User Authentication tokens work correctly
 4. Using the fetch calls to send and receive user submissions
+#CookIt
+
 
